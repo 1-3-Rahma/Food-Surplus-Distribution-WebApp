@@ -1,6 +1,6 @@
-import Navbar from "../../componets/Navbar/Navbar";
-import ProviderTackerMain from "../../componets/ProviderTackerMain/ProviderTackerMain";
-import FooterPage from "../../componets/FooterPage/FooterPage";
+import Navbar from "../../components/Navbar/Navbar";
+import ProviderTackerMain from "../../components/ProviderTackerMain/ProviderTackerMain";
+import FooterPage from "../../components/FooterPage/FooterPage";
 
 function ProviderTaker() {
     return (

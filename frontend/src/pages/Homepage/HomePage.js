@@ -1,6 +1,6 @@
-import HomeNavbar from "../../componets/HomeNavbar/HomeNavbar";
-import HomeMainPagebody from "../../componets/HomeMain/Home";
-import FooterPage from "../../componets/FooterPage/FooterPage";
+import HomeNavbar from "../../components/HomeNavbar/HomeNavbar";
+import HomeMainPagebody from "../../components/HomeMain/Home";
+import FooterPage from "../../components/FooterPage/FooterPage";
 
 function Homepage() {
     return (

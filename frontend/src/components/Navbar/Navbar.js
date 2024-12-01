@@ -1,5 +1,5 @@
 import './Navbar.css';
-import logo from '../../Assets/logo-trans.png';
+import logo from '../../Assets/logo.png';
 import logout from '../../Assets/logout.png';
 import notification from '../../Assets/Notification.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
