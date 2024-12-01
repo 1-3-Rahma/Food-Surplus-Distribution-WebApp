@@ -1,0 +1,36 @@
+.nav {
+    background-color: #FFF8F3;
+    text-align: right;
+}
+
+.nav .nav-link {
+    color: #AF8260;
+    font-size: 20px;
+    text-align: right;
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav .nav-link:hover {
+    color: #8d5f3d; /* Color when hovered */
+}
+
+.nav-link {
+    margin-inline: 20px;
+}
+
+.navtext {
+    margin-right: 30px;
+}
+
+.navimg {
+    float: left;
+    margin-right: 10px;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+}
