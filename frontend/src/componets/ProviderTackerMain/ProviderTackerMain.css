@@ -1,0 +1,25 @@
+h3{
+    margin-left: 100px;
+    margin-top: 30px;
+    color: #AF8260;
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
+           
+}
+h4{
+    margin-top: 20px;
+    color: #8d5f3d;
+    text-align: left;
+}
+.card{
+    background-color: #AF8260;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    flex-shrink: 0;                 /* Prevent the card from shrinking */
+    scroll-snap-align: start;       /* Ensures each card snaps into place */
+}
+.tracker{
+    background-color: #FFF8F3;
+    margin: 20px 100px;
+}
