@@ -28,7 +28,7 @@ const Available = ({ availableOrders }) => {
           {availableOrders.map((order) => (
             <div key={order.id} className="available-card">
               <img src={order.photo} alt={order.foodType} className="food-image" />
-              <h3>Food: {order.foodType}</h3>
+              <h5>Food: {order.foodType}</h5>
               <p>Number of dishes: {order.dishesCount}</p>
             </div>
           ))}

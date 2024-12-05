@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ForEachOrderRequest.css"; // Import the CSS file
+import Navbar from "../../components/Navbar/Navbar";
+import FooterPage from "../../components/FooterPage/FooterPage";
 
 const ForEachOrderRequestPage = () => {
   const { id } = useParams(); // Get the order ID from the URL
@@ -67,40 +69,49 @@ const ForEachOrderRequestPage = () => {
   const { orderDetails, provider, customer } = order.details;
 
   return (
-    <>
-      <h1 className="order-heading">Order has been requested </h1>
+    <div className="page-container">
+         <Navbar />
+
+         <div className="content-wrapper justify-content-center align-items-center">
+
+         <h1 className="order-heading">Order has been requested </h1>   
+          <div className="order-details-page">
+            <div className="order-section">
+              <h3>Order Requested:</h3>
+                <p>{orderDetails}</p>
+            </div>
+
+              <div className="order-section">
+                <h3>Provider Details:</h3>
+                <p>
+                  <strong>Name:</strong> {provider.name}
+                </p>
+                
+                <p>
+                  <strong>Address:</strong> {provider.address}
+                </p>
+              </div>
+              
+              <div className="order-section">
+                <h3>Customer Details:</h3>
+                <p>
+                  <strong>Name:</strong> {customer.name}
+                </p>
+                <p>
+                  <strong>Address:</strong> {customer.address}
+                </p>
+              </div>
+              
+              <div className="button-container">
+                <button onClick={handleAccept} className="accept-btn">
+                  Accept      
+                </button>
+              </div>
+            </div>
+            </div>
+          <FooterPage/>
     
-    <div className="order-details-page">
-      <div className="order-section">
-        <h3>Order Requested:</h3>
-        <p>{orderDetails}</p>
-      </div>
-      <div className="order-section">
-        <h3>Provider Details:</h3>
-        <p>
-          <strong>Name:</strong> {provider.name}
-        </p>
-        <p>
-          <strong>Address:</strong> {provider.address}
-        </p>
-      </div>
-      <div className="order-section">
-        <h3>Customer Details:</h3>
-        <p>
-          <strong>Name:</strong> {customer.name}
-        </p>
-        <p>
-          <strong>Address:</strong> {customer.address}
-        </p>
-      </div>
-      <div className="button-container">
-        <button onClick={handleAccept} className="accept-btn">
-          Accept
-      
-        </button>
-      </div>
     </div>
-    </>
 
   );
   

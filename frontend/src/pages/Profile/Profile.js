@@ -1,17 +1,17 @@
 import Navbar from "../../components/Navbar/Navbar";
 import ProfileMain from "../../components/ProfileMain/ProfileMain";
-import FooterPage from "../../componetns/FooterPage/FooterPage";
+import FooterPage from "../../components/FooterPage/FooterPage";
 
 function Profile() {
-    return (
-      <div>
-        <Navbar></Navbar>
-        <ProfileMain></ProfileMain>
-        <FooterPage></FooterPage>
+  return (
+    <div className="page-container">
+      <div className="content-wrapper">
+        <Navbar />
+        <ProfileMain />
       </div>
-      
-    );
-  }
-  
+      <FooterPage />
+    </div>
+  );
+}
+
 export default Profile;
-  

@@ -34,7 +34,7 @@ const Ordered = ({ orderedItems }) => {
                 alt={order.foodType}
                 className="food-image"
               />
-              <h3>Food: {order.foodType}</h3>
+              <h5>Food: {order.foodType}</h5>
               <p>Number of dishes: {order.foodCount}</p>
             </div>
           ))}

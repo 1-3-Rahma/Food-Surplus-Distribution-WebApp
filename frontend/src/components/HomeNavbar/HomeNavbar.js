@@ -1,5 +1,5 @@
 import './HomeNavbar.css';
-import logo from '../../Assets/logo-trans.png';
+import logo from '../../Assets/logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function HomeNavbar() {
@@ -9,11 +9,20 @@ function HomeNavbar() {
         <nav class="navbar navbar-expand-lg nav ">
             <div class="container-fluid ">
                 <a class="logo" href="#">
-                  <img src={logo} alt="Logo" width="70" height="70" />
+                  <img src={logo} alt="Logo" width="80" height="80" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+                >
+
                   <span class="navbar-toggler-icon"></span>
                 </button>
+                
               <div class="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navtext">
                     <li class="nav-item">

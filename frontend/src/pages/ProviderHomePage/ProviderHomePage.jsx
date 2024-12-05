@@ -4,7 +4,8 @@ import Ordered from "../../components/Ordered/Ordered";
 import food from "../../Assets/food.png";
 import photo from "../../Assets/photo.png"
 import Volunteer from '../../components/Volunteer/Volunteer'
-
+import Navbar from "../../components/Navbar/Navbar";
+import FooterPage from "../../components/FooterPage/FooterPage";
 
 const ProviderHomePage = () => {
   const availableOrders = [
@@ -51,11 +52,16 @@ const ProviderHomePage = () => {
   ];
 
   return (
-    <div>
-      <Available availableOrders={availableOrders} />
+    <div className="page-container">
+    <Navbar />
+     <div className="content-wrapper justify-content-center align-items-center">
+     <Available availableOrders={availableOrders} />
       <Ordered orderedItems={orderedItems} />
       <Volunteer volunteers={volunteers} />
-    </div>
+     </div>
+     <FooterPage />
+   </div>
+
   );
 };
 

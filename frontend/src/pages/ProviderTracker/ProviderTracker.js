@@ -3,14 +3,15 @@ import ProviderTackerMain from "../../components/ProviderTackerMain/ProviderTack
 import FooterPage from "../../components/FooterPage/FooterPage";
 
 function ProviderTaker() {
-    return (
-      <div>
-        <Navbar></Navbar>
-        <ProviderTackerMain></ProviderTackerMain>
-        <FooterPage></FooterPage>
+  return (
+    <div className="page-container">
+     <Navbar />
+      <div className="content-wrapper d-flex justify-content-center align-items-center">
+        <ProviderTackerMain/>
       </div>
-      
-    );
-  }
-  
+      <FooterPage />
+    </div>
+  );
+}
+
 export default ProviderTaker;

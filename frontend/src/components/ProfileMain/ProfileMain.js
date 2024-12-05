@@ -8,8 +8,8 @@ function HomeMain() {
       
       <div class="container text-center">
         <div class="row">
-          <div class="col">
-            <form>
+          <div class="col sp">
+            <form class = "size">
               <div class="row mb-3 align-items-center">
                 <label for="exampleInputName" class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-9">

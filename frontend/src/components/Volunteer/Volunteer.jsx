@@ -30,7 +30,7 @@ const Volunteer = ({ volunteers }) => {
                   className="volunteer-image"
                 />
                 <div>
-                  <h3>{volunteer.name}</h3>
+                  <h5 className="hv">{volunteer.name}</h5>
                
                 </div>
               </div>

@@ -4,6 +4,7 @@
     padding: 20px;
     text-align: center;
     color: #90694C;
+    margin-top: 35px;
   }
   /* Wrapper for the horizontal slider */
   .slider-wrapper {
@@ -41,6 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: left;
   } 
   .order-card .details {
     flex-grow: 1; /* Allow the details section to grow and fill the space */

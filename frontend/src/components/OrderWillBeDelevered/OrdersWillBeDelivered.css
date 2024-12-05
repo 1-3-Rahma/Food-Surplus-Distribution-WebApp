@@ -3,7 +3,8 @@
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
     text-align: center;
-    color: #90694C;
+    color: #906a4c;
+    margin-top: 35px;
   }
 
 
@@ -34,7 +35,9 @@
   }
   
 
-
+.order-card{
+  text-align: left;
+}
 
 .order-card:hover{
   cursor: pointer;

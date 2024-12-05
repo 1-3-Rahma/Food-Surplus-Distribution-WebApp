@@ -2,15 +2,16 @@ import Navbar from "../../components/Navbar/Navbar";
 import CustomerTrackerMain from "../../components/CustomerTrackerMain/CustomerTrackerMain";
 import FooterPage from "../../components/FooterPage/FooterPage";
 
-function ProviderTaker() {
-    return (
-      <div>
-        <Navbar></Navbar>
-        <CustomerTrackerMain></CustomerTrackerMain>
-        <FooterPage></FooterPage>
+function CustomerTracker() {
+  return (
+    <div className="page-container">
+      <Navbar />
+      <div className="content-wrapper d-flex justify-content-center align-items-center">
+        <CustomerTrackerMain/>
       </div>
-      
-    );
-  }
-  
-export default ProviderTaker;
+      <FooterPage />
+    </div>
+  );
+}
+
+export default CustomerTracker;
