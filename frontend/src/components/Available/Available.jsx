@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Available.css";
-import Add from '../../Assets/Add.png'
+import Add from '../../Assets/plus-trans.png'
 
 const Available = ({ availableOrders }) => {
   const sliderRef = useRef(null);

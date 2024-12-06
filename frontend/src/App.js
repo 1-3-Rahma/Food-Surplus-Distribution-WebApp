@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/order/:id" element={<ForEachOrderPage />} />
         <Route path="/Provider" element = {<Provider/>}/>
         <Route path="/ProfilePage" element = {<ProfilePage/>}/>
-        <Route path="/Volunter" element = {<Volunteer/>}/>
+        <Route path="/Volunteer" element = {<Volunteer/>}/>
         <Route path="/ProviderTracker" element = {<ProviderTacker/>}/>
         <Route path="/CustomerTracker" element = {<CustomerTracker/>}/>
 
