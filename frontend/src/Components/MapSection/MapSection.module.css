@@ -1,0 +1,15 @@
+.mapContainer {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .mapImage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    width: 800px;
+    background-color: #f8f1e9;
+    padding: 30px;
+    border-radius: 8px;
+  }

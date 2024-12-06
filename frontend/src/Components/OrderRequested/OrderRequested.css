@@ -1,0 +1,36 @@
+.order-requested-container {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    color: #90694C;
+  }
+  
+  .details-section {
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .details-section h3 {
+    margin-bottom: 10px;
+    color: #90694C;
+  }
+  
+  .accept-btn {
+    background-color: #90694C;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accept-btn:hover {
+    background-color: #7a593a;
+  }
+  

@@ -1,0 +1,75 @@
+.available-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+  }
+  
+  h2 {
+    font-family:'Times New Roman', Times, serif ;
+    color: #a47656;
+    margin-bottom: 30px;
+    font-size: 35px;
+  }
+  
+
+  .slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Hide overflow */
+    width: 80%; /* Adjust width to your preference */
+  }
+  
+
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on mobile */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  .slider::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+  }
+  
+  
+  .available-card {
+    background-color: #f6f1ec;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    flex: 0 0 auto;
+    width: 250px;
+    height: 300px;
+    color: #90694C;
+  }
+  
+  .available-card img.food-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .add-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #90694C;
+  }
+
+
+  .add-icon{
+    width: 25px;
+    margin-top: -7px;
+  }
+
+
+  
