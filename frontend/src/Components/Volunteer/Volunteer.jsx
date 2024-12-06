@@ -15,7 +15,7 @@ const Volunteer = ({ volunteers }) => {
 
   return (
     <div className="volunteer-container">
-      <h2>Volunteers</h2>
+      <h2 className="av">Volunteers</h2>
       <div className="slider-wrapper">
         <button className="nav-btn left" onClick={scrollLeft}>
           &lt;

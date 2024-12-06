@@ -1,10 +1,10 @@
 import React from "react";
-import Available from "../../Components/Available/Available";
 import Ordered from "../../Components/Ordered/Ordered";
 import food from "../../Assets/food.png";
 import photo from "../../Assets/photo.png"
 import Volunteer from '../../Components/Volunteer/Volunteer'
 import Footer from '../../Components/Footer/Footer'
+import Available from "../../Components/Available/Available";
 import Header from '../../Components/Header/Header'
 
 
@@ -57,7 +57,7 @@ const ProviderHomePage = () => {
     <div className="page-container">
     <Header/>
      <div className="content-wrapper justify-content-center align-items-center">
-     <Available availableOrders={availableOrders} />
+      <Available availableOrders={availableOrders} />
       <Ordered orderedItems={orderedItems} />
       <Volunteer volunteers={volunteers} />
      </div>

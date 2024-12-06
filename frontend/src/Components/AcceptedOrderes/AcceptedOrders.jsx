@@ -17,7 +17,7 @@ const AcceptedOrders = ({ acceptedOrders, onCancelOrder }) => {
 
   return (
     <div className="accepted-orders-container">
-      <h2>Accepted Orders</h2>
+      <h2 className='av'>Accepted Orders</h2>
       <div className="slider-wrapper">
         <button className="nav-btn left" onClick={scrollLeft}>
           &lt;

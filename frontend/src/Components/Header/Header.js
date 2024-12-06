@@ -13,7 +13,7 @@ function Header() {
       </div>
       <div className={styles.nav_links}>
         <div className={classNames(styles.nav_item ,styles.logout)}>
-          <img src={notification} alt="Notifications" className={styles.icon} width={20} height={20} />
+          <img src={notification} alt="Notifications" className={styles.icon} width={23} height={23} />
           <span>Notifications</span>
         </div>
         <div className={classNames(styles.nav_item ,styles.logout)} >
@@ -21,7 +21,7 @@ function Header() {
           <span>Logout</span>
         </div>
         <div className={styles.profile}>
-          <img src={profile} alt="User Profile" className={styles.profileImg} width={40} height={40} />
+          <img src={profile} alt="User Profile" className={styles.profileImg} width={45} height={45} />
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Available.css";
-import Add from '../../Assets/plus-trans.png'
+import Add from '../../Assets/Plus-trans.png'
 
 const Available = ({ availableOrders }) => {
   const sliderRef = useRef(null);
@@ -18,7 +18,7 @@ const Available = ({ availableOrders }) => {
 
   return (
     <div className="available-container">
-      <h2>Available</h2>
+      <h2 className="av">Available</h2>
       <div className="slider-wrapper">
         <button className="nav-btn left" onClick={scrollLeft}>
           &lt;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Available from "../Components/AvailableOrder/AvailableOrder";
-import Ordered from "../Components/OrderCard/OrderCard";
-import food from "../Assets/food.png";
-import Header from '../Components/Header/Header';
-import Footer from '../Components/Footer/Footer'
+import Available from "../../Components/AvailableOrder/AvailableOrder";
+import Ordered from "../../Components/OrderCard/OrderCard";
+import food from "../../Assets/food.png";
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer'
 
 const ConstumerHomePage = () => {
   const [availableOrders, setAvailableOrders] = useState([
@@ -28,12 +28,16 @@ const ConstumerHomePage = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <Available availableOrders={availableOrders} onAcceptOrder={onAcceptOrder} />
-      <Ordered orderedItems={orderedItems} onCancelOrder={onCancelOrder} />
-      <Footer />
-    </div>
+
+    <div className="page-container">
+    <Header/>
+     <div className="content-wrapper justify-content-center align-items-center">
+     <Available availableOrders={availableOrders} onAcceptOrder={onAcceptOrder} />
+     <Ordered orderedItems={orderedItems} onCancelOrder={onCancelOrder} />
+     </div>
+    <Footer/>
+   </div>
+
   );
 };
 

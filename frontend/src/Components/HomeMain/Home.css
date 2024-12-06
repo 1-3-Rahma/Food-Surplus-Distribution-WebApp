@@ -1,9 +1,13 @@
 body{
     overflow-x: hidden;
 }
+
+.mainPage{
+margin-left: -70px;
+}
 .hh{
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 60px;
     color: #AF8260;
     font-weight: 400;
     font-style: normal;
@@ -21,6 +25,7 @@ body{
     -webkit-overflow-scrolling: touch;  
     -ms-overflow-style: none;  
     scrollbar-width: none; 
+    margin-right: 50px;
 }
 .card-container-h::-webkit-scrollbar {
     display: none;  
@@ -42,24 +47,33 @@ body{
     margin-left: 130px;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
-    font-size: 25px;
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
 }
-.main{
-    margin-left: 150px;
-    margin-right: 400px;
-    font-size: 20px;
-}
-.mainimg{
-    margin: 0%;
-    width : 30%;
-    height: 30%;
-    float: right;
-    position: relative;
-    top: -30px;
-    right: -80px;
+.cardsContainer{
+    margin-top: 120px;
 }
 
-.h{
-    text-align: left;
+.mainimg{
+    border-radius: 50px;
+    float: right;
+    top: -35px;
+    right: -140px;
+    opacity: 0.6; /* Adjust transparency */
+    z-index: 1;
+    position: relative;
+}
+
+
+@media (max-width: 900px) {
+.mainimg{
+    display: none;
+}
+
+.card-container-h {
+width: 75%;
+}
+.cardsContainer{
+    margin-top: 50px;
+}
 }

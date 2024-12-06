@@ -1,5 +1,4 @@
 .hp{
-    margin-left: 100px;
     margin-top: 30px;
     color: #AF8260;
     font-weight: 400;
@@ -8,10 +7,14 @@
     text-align:center;      
 }
 
-h4{
+.hpro{
     margin-top: 20px;
     color: #8d5f3d;
     text-align: left;
+}
+.card-body{
+    text-align: left;
+    width: 100%;
 }
 
 .tracker{

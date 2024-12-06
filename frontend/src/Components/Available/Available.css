@@ -4,11 +4,13 @@
     margin-top: 70px;
   }
   
-  h2 {
+  .av {
     font-family:'Times New Roman', Times, serif ;
     color: #a47656;
     margin-bottom: 30px;
     font-size: 35px;
+    text-align: left;
+    margin-left: 80px;
   }
   
 
@@ -17,7 +19,7 @@
     display: flex;
     align-items: center;
     overflow: hidden; /* Hide overflow */
-    width: 80%; /* Adjust width to your preference */
+    width: 90%; /* Adjust width to your preference */
   }
   
 
@@ -45,14 +47,19 @@
     width: 250px;
     height: 300px;
     color: #90694C;
+
+    
   }
   
-  .available-card img.food-image {
+  img.food-image {
     width: 100px;
     height: 100px;
     border-radius: 5px;
     object-fit: cover;
     margin-bottom: 10px;
+    margin-left: 60px;
+
+    
   }
   
   .add-card {

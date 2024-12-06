@@ -4,34 +4,12 @@
     padding: 20px;
     text-align: center;
     color: #90694C;
-    margin-top: 35px;
+    margin-top: 70px;
   }
-  /* Wrapper for the horizontal slider */
-  .slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    width: 80%; /* Make the wrapper take the full width */
-    margin: auto;
-  } 
-  /* Slider content */
-  .slider {
-    display: flex;
-    transition: transform 0.3s ease;
-    gap: 20px; /* Space between cards */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-  /* Hide the scrollbar */
-  .slider::-webkit-scrollbar {
-    display: none;
-  } 
+
   /* Order card styling */
   .order-card {
-    background-color: #af82606e;
-    border: 1px solid #a982647d;
+    background-color: #f6f1ec;
     border-radius: 15px;
     padding: 16px;
     min-width: 250px;
@@ -43,6 +21,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
+    cursor: pointer;
   } 
   .order-card .details {
     flex-grow: 1; /* Allow the details section to grow and fill the space */

@@ -10,9 +10,9 @@ function ProviderTacker() {
         <div className="card tracker">
           <div className="card-body">
             <p className="card-text">
-              <h4>Volunteer details:</h4>
+              <h4 className='hpro'>Volunteer details:</h4>
               <br /><br /><br /><br /><br /><br />
-              <h4>Order details:</h4>
+              <h4 className='hpr'>Order details:</h4>
               <br /><br /><br /><br /><br /><br />
             </p>
           </div>

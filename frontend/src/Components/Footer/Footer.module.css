@@ -1,3 +1,10 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .footer_container {
   display: flex;
   flex-wrap: wrap;
@@ -6,8 +13,11 @@
   background-color: #d6c7b2;
   font-family: Arial, sans-serif;
   color: #000;
-  padding-left: 30px;
-  margin-top: 30px;
+  padding: 15px 30px; 
+    margin-top: 30px;
+  bottom: 0;
+
+  width: 100%;
 }
 
 .footer-section {
@@ -63,8 +73,11 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .footer_container {
+    position: relative;
     flex-direction: column; /* Stack sections vertically */
     text-align: center; /* Center all text */
+    padding: 15px;
+
   }
   .footer-section {
     margin: 10px 0;

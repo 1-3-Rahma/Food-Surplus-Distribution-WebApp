@@ -14,7 +14,7 @@ const OrderWillBeDelivered = ({ orders, onAcceptOrder, onNavigateToOrder }) => {
 
   return (
     <div className="order-container">
-      <h2>Orders to be Delivered</h2>
+      <h2 className="av">Orders to be Delivered</h2>
       <div className="slider-wrapper">
         <button className="nav-btn left" onClick={scrollLeft}>
           &lt;

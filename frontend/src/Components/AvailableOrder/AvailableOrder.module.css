@@ -41,7 +41,7 @@ h2 {
   display: flex;
   align-items: center;
   overflow: hidden; /* Hide overflow */
-  width: 90%; /* Adjust width to your preference */
+  margin-right: 70px;
 }
   
 .accept_btn {
@@ -118,8 +118,8 @@ background-color: #906a4cb4;
 .section {
 display: flex;
 justify-content: space-between; /* Space between left and right sections */
-align-items: flex-start; /* Align content at the start */
-padding: 35px;
+margin-top: 70px;
+margin-right: 30px;
 }
 .text {
 color: #AF8260;
@@ -152,8 +152,9 @@ z-index:10
 display: flex;
 align-items: baseline;
 gap: 10px;
-padding-right: 30px;
 margin-left: auto;
+margin-right: 30px;
+margin-bottom: 40px;
 }
 
 

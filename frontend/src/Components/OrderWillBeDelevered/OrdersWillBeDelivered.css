@@ -4,44 +4,8 @@
     padding: 20px;
     text-align: center;
     color: #906a4c;
-    margin-top: 35px;
+    margin-top: 70px;
   }
-
-
-  
-.slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden; /* Hide overflow */
-    width: 80%; /* Adjust width to your preference */
-    margin: auto;
-    padding: 0 50px;
-  }
-
-  
-.slider {
-    display: flex;
-    transition: transform 0.3s ease;
-    gap: 20px; /* Space between cards */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* For smoother scrolling on mobile */
-    scroll-behavior: smooth; /* Smooth scrolling */
-  
-  }
-
-  .slider::-webkit-scrollbar {
-    display: none; /* Hides the scrollbar */
-  }
-  
-
-.order-card{
-  text-align: left;
-}
-
-.order-card:hover{
-  cursor: pointer;
-}  
   
 .accept-btn {
     background-color: #90694C;

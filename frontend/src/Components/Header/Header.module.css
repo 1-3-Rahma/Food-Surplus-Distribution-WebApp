@@ -15,12 +15,22 @@
   .nav_links {
     display: flex;
     align-items: center;
+    margin-right: 15px;
+    font-size: 12px;
+  }
+  .meal{
+    color: #8e6748;
+    font-size: 16px;
+  }
+  .span:hover{
+    color: #724e32;
   }
   .nav_item , .logout {
     margin-left: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 13px;
   }
   .logout {
     margin-left: 17px;
@@ -31,6 +41,14 @@
     color: #AF8260 ;
     margin-right: 8px;
   }
+
+  .main{
+    margin-left: 5px;
+    color: #AF8260 ;
+    margin-right: 20px;
+    font-size: 15px;
+    margin-left: 50px;
+  }
   .icon {
     margin-top: 7px;
   }
@@ -38,4 +56,12 @@
   .profile{
     display: flex;
     align-items: center;
+  }
+
+
+  @media (max-width: 768px) {
+  .meal{
+    display: none;
+    
+  }
   }

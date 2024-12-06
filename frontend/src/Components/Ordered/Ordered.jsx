@@ -17,7 +17,7 @@ const Ordered = ({ orderedItems }) => {
 
   return (
     <div className="ordered-container">
-      <h2>Ordered</h2>
+      <h2 className="av">Ordered</h2>
       <div className="slider-wrapper">
         <button className="nav-btn left" onClick={scrollLeft}>
           &lt;

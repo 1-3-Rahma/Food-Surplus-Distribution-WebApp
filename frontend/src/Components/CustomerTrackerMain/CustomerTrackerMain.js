@@ -10,7 +10,7 @@ function CustomerTrackerMain() {
         <div className="card tracker">
           <div className="card-body">
             <p className="card-text">
-              <h4>order ditails:</h4>
+              <h4>Order ditails:</h4>
               <br /><br /><br /><br /><br /><br />
               <h4>Volunteer details:</h4>
               <br /><br /><br /><br /><br /><br />

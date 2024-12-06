@@ -13,6 +13,7 @@
   margin-bottom: 45px;
 }
 
+
 /* Ensure consistent image size across both sections */
 .card_container img.food_image {
   width: 100px;
@@ -46,8 +47,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 90%;
   margin-left: 71px;
+  margin-right: 70px;
 }
 
 .slider {
@@ -87,7 +88,7 @@
 
   .ordered_container {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   h2 {
