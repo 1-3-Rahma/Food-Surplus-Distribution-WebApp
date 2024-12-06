@@ -1,0 +1,98 @@
+/* Shared Styles for Both Available Orders and Your Orders Cards */
+.card_container {
+  background-color: #f6f1ec;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 250px;
+  height: 300px;
+  color: #90694C;
+  transition: transform 0.3s ease;
+  margin-bottom: 45px;
+}
+
+/* Ensure consistent image size across both sections */
+.card_container img.food_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+/* Common button style for both sections */
+.action_button {
+  background-color: #90694C;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 90px;
+}
+
+.action_button:hover {
+  background-color: #906a4cb4;
+}
+
+/* Slider and wrapper to keep uniform layout */
+.slider_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 90%;
+  margin-left: 71px;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  transition: transform 0.3s ease;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.pad1{
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #af826094;
+  padding: 10px 10px;  /* Increased padding to make the button larger */
+  font-size: 20px;     /* Adjust font size for a bigger appearance */
+  border: none;
+}
+.pad2{
+  margin-left: auto;
+  border-radius: 10px;
+  background-color: #af826094;
+  border: none;
+  padding: 10px 10px;  /* Increased padding to make the button larger */
+  font-size: 20px;     /* Adjust font size for a bigger appearance */
+}
+.text{
+  color: #AF8260;
+  text-align: left;
+  padding-left: 110px;
+}
+
+  .ordered_container {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-family:'Times New Roman', Times, serif ;
+    color: #a47656;
+    margin-bottom: 30px;
+    font-size: 35px;
+  }

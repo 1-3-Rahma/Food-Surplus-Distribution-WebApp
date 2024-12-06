@@ -1,18 +1,24 @@
+import AddPage from './Pages/AddPage'
+import ConsumerHomePage from './Pages/ConstumerHomePage'
+import VOrderDetails from './Pages/VoulanterOrderDetails'
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Volunteer from './pages/VolunteerHomePage/VolunteerHomePage';
-import ForEachOrderPage from './pages/ForEachOrderRequest/ForEachOrderRequest';
-import Provider from './pages/ProviderHomePage/ProviderHomePage';
-import HomePage from './pages/Homepage/HomePage.js';
-import ProfilePage from './pages/Profile/Profile.js';
-import ProviderTacker from "./pages/ProviderTracker/ProviderTracker";
-import CustomerTracker from "./pages/CustomerTracker/CustomerTracker";
+import {BrowserRouter as Router , Route , Routes} from 'react-router-dom';
+import Volunteer from './Pages/VolunteerHomePage/VolunteerHomePage.jsx';
+import ForEachOrderPage from './Pages/ForEachOrderRequest/ForEachOrderRequest.jsx';
+import Provider from './Pages/ProviderHomePage/ProviderHomePage.jsx';
+import HomePage from './Pages/Homepage/HomePage.js';
+import ProfilePage from './Pages/Profile/Profile.js';
+import ProviderTacker from "./Pages/ProviderTracker/ProviderTracker.js";
+import CustomerTracker from "./Pages/CustomerTracker/CustomerTracker.js";
 
-const App = () => {
+function App() {
   return (
-    
+    <div className="Meal-id">
     <Router>
       <Routes>
+        <Route path="/AddPage" element={<AddPage/>} />
+        <Route path="/ConsumerHomePage" element={<ConsumerHomePage/>} />
+        <Route path="/VoulanterOrderDetails" element={<VOrderDetails/>} />
         <Route path="/" element={<HomePage/>} />
         <Route path="/order/:id" element={<ForEachOrderPage />} />
         <Route path="/Provider" element = {<Provider/>}/>
@@ -20,12 +26,10 @@ const App = () => {
         <Route path="/Volunteer" element = {<Volunteer/>}/>
         <Route path="/ProviderTracker" element = {<ProviderTacker/>}/>
         <Route path="/CustomerTracker" element = {<CustomerTracker/>}/>
-
       </Routes>
     </Router>
-
-
+    </div>
   );
-};
+}
 
 export default App;

@@ -1,0 +1,15 @@
+.trackButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #8b5e34;;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .trackButton:hover {
+    background-color: #70492b;
+  }
