@@ -13,7 +13,7 @@ module.exports = {
           600: '#8d5f3d', // You can adjust this hex color to get the exact shade of brown you want
         },
         semi:{
-          500: '#AF8260'
+          500: '#AF8250'
         }
       },
     },

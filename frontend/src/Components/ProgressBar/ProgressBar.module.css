@@ -7,7 +7,7 @@
 }
 
 .step {
-  @apply w-10 h-10 flex items-center justify-center z-10 relative bg-semi-500 rounded-full font-semibold text-white;
+  @apply w-10 h-10 flex items-center justify-center z-10 relative bg-brown-600 rounded-full font-semibold text-white;
 }
 
 .active .step {
@@ -15,7 +15,7 @@
 }
 
 .complete .step {
-  @apply bg-brown-600; /* Changed to brown */
+  @apply bg-semi-500; /* Changed to brown */
 }
 
 .complete p {
