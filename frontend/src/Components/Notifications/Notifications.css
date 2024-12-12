@@ -1,5 +1,5 @@
 .notification-card {
-    background-color: #FFF8F3;
+    background-color: #f6f1ec;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@
 }
 
 .notification-card button {
-    background-color: #AF8260;
+    background-color: #90694C;
     color: white;
     border: none;
     border-radius: 5px;
@@ -25,6 +25,6 @@
 }
 
 .notification-card button:hover {
-    background-color: rgb(145, 112, 91);
+    background-color: #906a4cb4;
     /* Darker shade on hover */
 }

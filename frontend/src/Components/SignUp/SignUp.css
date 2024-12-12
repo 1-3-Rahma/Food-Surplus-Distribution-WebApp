@@ -3,14 +3,9 @@
     max-width: 150px;
 }
  
-/* h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-} */
-
 .form-header {
     margin-top: -30px;
+    color: #90694C;
 }
 
 .form-group {
@@ -18,7 +13,7 @@
 }
 
 button[type="submit"] {
-    background-color: #AF8260;
+    background-color: #90694C;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -28,5 +23,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #d7986f;
+    background-color: #906a4cb4;
 }

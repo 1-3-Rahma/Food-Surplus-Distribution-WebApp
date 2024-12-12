@@ -63,9 +63,6 @@
   text-decoration: none;
 }
 
-/* .icon {
-  margin-top: 7px;
-} */
 
 
 .nav_item,
@@ -75,7 +72,7 @@
   justify-content: flex-start;
   align-items: center; /* Vertically align items */
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1; /* Prevent extra spacing */
   text-decoration: none !important;
 }

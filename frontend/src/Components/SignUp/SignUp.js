@@ -114,7 +114,7 @@ function SignUp() {
                                     name={field}
                                     value={formData[field]}
                                     onChange={handleChange}
-                                    placeholder={field === "address" ? "123 Main Street, city" : ""}
+                                    placeholder={field === "address" ? "123 Main Street, city" : "" }
                                     required
                                 />
                                 {errors[field] && <small className="text-danger">{errors[field]}</small>}
