@@ -39,9 +39,9 @@ const Available = ({ availableOrders }) => {
             onClick={() => navigate("/AddPage")}
           >
             <h3>Add</h3>
-           
-                <img className="add-icon" src= {Add}/>
-    
+
+            <img className="add-icon" src={Add} />
+
           </div>
         </div>
         <button className="nav-btn right" onClick={scrollRight}>

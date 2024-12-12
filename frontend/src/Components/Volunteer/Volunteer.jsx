@@ -31,7 +31,7 @@ const Volunteer = ({ volunteers }) => {
                 />
                 <div>
                   <h5 className="hv">{volunteer.name}</h5>
-               
+
                 </div>
               </div>
               <div className="food-details">

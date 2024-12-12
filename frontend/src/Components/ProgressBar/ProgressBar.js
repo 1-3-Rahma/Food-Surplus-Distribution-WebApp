@@ -25,9 +25,8 @@ const ProgressBar = () => {
         {steps?.map((step, i) => (
           <div
             key={i}
-            className={`${styles.step_item} ${currentStep === i + 1 && styles.active} ${
-              (i + 1 < currentStep || complete) && styles.complete
-            } `}
+            className={`${styles.step_item} ${currentStep === i + 1 && styles.active} ${(i + 1 < currentStep || complete) && styles.complete
+              } `}
           >
             <div className={styles.step}>
               {i + 1 < currentStep || complete ? <TiTick size={24} /> : i + 1}

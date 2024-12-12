@@ -2,15 +2,15 @@ import Header from '../../Components/Header/Header'
 import AddItems from '../../Components/AddItem/AddItem'
 import Footer from '../../Components/Footer/Footer';
 
-function AddPage (){
-    return(
-    <div className="page-container">
-        <Header/>
-        <div className="content-wrapper justify-content-center align-items-center">
-        <AddItems/>
+function AddPage() {
+    return (
+        <div className="page-container">
+            <Header />
+            <div className="content-wrapper justify-content-center align-items-center">
+                <AddItems />
+            </div>
+            <Footer />
         </div>
-        <Footer/>
-    </div>
     )
 }
 

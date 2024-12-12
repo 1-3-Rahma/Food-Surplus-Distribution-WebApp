@@ -5,22 +5,18 @@ import ProgressBar from '../../Components/ProgressBar/ProgressBar';
 import Footer from '../../Components/Footer/Footer'
 
 
-function VoulanterOrderDetails (){
-    return(
+function VolunteerOrderDetails() {
+    return (
         <div>
-           <Header/>
-           <MapSection/>
-           <OrderDetailsTable/>
-           <div className='bg-gray-180 flex flex-col gap-10  items-center jusify-center' >
-           <ProgressBar/>
-           <Footer/>
-           </div>
+            <Header />
+            <MapSection />
+            <OrderDetailsTable />
+            <div className='bg-gray-180 flex flex-col gap-10 items-center justify-center' >
+                <ProgressBar />
+                <Footer />
+            </div>
         </div>
-
-
-
-
     )
 }
 
-export default VoulanterOrderDetails ;
+export default VolunteerOrderDetails;

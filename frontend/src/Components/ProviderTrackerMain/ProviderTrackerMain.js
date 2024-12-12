@@ -2,7 +2,7 @@ import './ProviderTrackerMain.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ProviderTrackerMain.css';
 
-function ProviderTacker() {
+function ProviderTracker() {
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center">
       <div className="text-center center-content">
@@ -22,4 +22,4 @@ function ProviderTacker() {
   );
 }
 
-export default ProviderTacker;
+export default ProviderTracker;

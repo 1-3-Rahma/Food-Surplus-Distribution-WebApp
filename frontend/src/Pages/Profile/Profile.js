@@ -6,10 +6,10 @@ function Profile() {
   return (
     <div className="page-container">
       <div className="content-wrapper">
-        <Header/>
+        <Header />
         <ProfileMain />
       </div>
-     <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -8,9 +8,9 @@ function Homepage() {
     <div className="page-container">
       <div className="content-wrapper">
         <HomeNavbar />
-        <HomeMain/>
+        <HomeMain />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

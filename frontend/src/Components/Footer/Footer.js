@@ -87,11 +87,11 @@ function Footer() {
       <div className={`${styles['footer-section']} ${styles.right}`}>
         <h1 className={styles.text}>Meal Aid</h1>
         <div className={styles.links}>
-          <a href="about" className={styles.link}>About</a>
+          <a href="/" className={styles.link}>About</a>
           <span className={styles.separator}>|</span>
-          <a href="highlight" className={styles.link}>Highlight</a>
+          <a href="/" className={styles.link}>Highlight</a>
           <span className={styles.separator}>|</span>
-          <a href="signup" className={styles.link}>Sign up</a>
+          <a href="signup" className={styles.link}>Sign Up</a>
           <span className={styles.separator}>|</span>
           <a href="login" className={styles.link}>Login</a>
         </div>

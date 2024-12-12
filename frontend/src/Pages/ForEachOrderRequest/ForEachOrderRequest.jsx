@@ -27,30 +27,30 @@ const ForEachOrderRequestPage = () => {
       },
     },
     {
-        id: 3,
-        details: {
-          orderDetails: "5 sandwiches and 2 juices.",
-          provider: { name: "Provider B", address: "789 Oak St, City" },
-          customer: { name: "Customer B", address: "321 Pine St, City" },
-        },
+      id: 3,
+      details: {
+        orderDetails: "5 sandwiches and 2 juices.",
+        provider: { name: "Provider B", address: "789 Oak St, City" },
+        customer: { name: "Customer B", address: "321 Pine St, City" },
       },
-      {
-        id: 4,
-        details: {
-          orderDetails: "5 sandwiches and 2 juices.",
-          provider: { name: "Provider B", address: "789 Oak St, City" },
-          customer: { name: "Customer B", address: "321 Pine St, City" },
-        },
+    },
+    {
+      id: 4,
+      details: {
+        orderDetails: "5 sandwiches and 2 juices.",
+        provider: { name: "Provider B", address: "789 Oak St, City" },
+        customer: { name: "Customer B", address: "321 Pine St, City" },
       },
-      {
-        id: 5,
-        details: {
-          orderDetails: "5 sandwiches and 2 juices.",
-          provider: { name: "Provider B", address: "789 Oak St, City" },
-          customer: { name: "Customer B", address: "321 Pine St, City" },
-        },
+    },
+    {
+      id: 5,
+      details: {
+        orderDetails: "5 sandwiches and 2 juices.",
+        provider: { name: "Provider B", address: "789 Oak St, City" },
+        customer: { name: "Customer B", address: "321 Pine St, City" },
       },
-    
+    },
+
   ];
 
   // Find the order by ID
@@ -63,58 +63,58 @@ const ForEachOrderRequestPage = () => {
   // Function to handle order acceptance
   const handleAccept = () => {
     alert(`You have accepted Order ID: ${id}`);
-    navigate("/"); // Redirect to VolunteerHomePage
+    navigate("/Volunteer"); // Redirect to VolunteerHomePage
   };
 
   const { orderDetails, provider, customer } = order.details;
 
   return (
     <div className="page-container">
-        <Header/>
+      <Header />
 
-         <div className="content-wrapper justify-content-center align-items-center">
+      <div className="content-wrapper justify-content-center align-items-center">
 
-         <h1 className="order-heading">Order has been requested </h1>   
-          <div className="order-details-page">
-            <div className="order-section">
-              <h3>Order Requested:</h3>
-                <p>{orderDetails}</p>
-            </div>
+        <h1 className="order-heading">Order has been requested </h1>
+        <div className="order-details-page">
+          <div className="order-section">
+            <h3>Order Requested:</h3>
+            <p>{orderDetails}</p>
+          </div>
 
-              <div className="order-section">
-                <h3>Provider Details:</h3>
-                <p>
-                  <strong>Name:</strong> {provider.name}
-                </p>
-                
-                <p>
-                  <strong>Address:</strong> {provider.address}
-                </p>
-              </div>
-              
-              <div className="order-section">
-                <h3>Customer Details:</h3>
-                <p>
-                  <strong>Name:</strong> {customer.name}
-                </p>
-                <p>
-                  <strong>Address:</strong> {customer.address}
-                </p>
-              </div>
-              
-              <div className="button-container">
-                <button onClick={handleAccept} className="accept-btn">
-                  Accept      
-                </button>
-              </div>
-            </div>
-            </div>
-          <Footer/>
-    
+          <div className="order-section">
+            <h3>Provider Details:</h3>
+            <p>
+              <strong>Name:</strong> {provider.name}
+            </p>
+
+            <p>
+              <strong>Address:</strong> {provider.address}
+            </p>
+          </div>
+
+          <div className="order-section">
+            <h3>Customer Details:</h3>
+            <p>
+              <strong>Name:</strong> {customer.name}
+            </p>
+            <p>
+              <strong>Address:</strong> {customer.address}
+            </p>
+          </div>
+
+          <div className="button-container">
+            <button onClick={handleAccept} className="accept-btn">
+              Accept
+            </button>
+          </div>
+        </div>
+      </div>
+      <Footer />
+
     </div>
 
   );
-  
+
 };
 
 export default ForEachOrderRequestPage;

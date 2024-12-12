@@ -7,7 +7,7 @@ import Quan from '../Quantity button/quantity';
 const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOrder }) => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
-  
+
   // Scroll functions
   const scrollLeft = () => {
     sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -16,15 +16,15 @@ const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOr
   const scrollRight = () => {
     sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
-  
+
   return (
     <div className={styles.available_container}>
       <div className={styles.section}>
         <h2 className={styles.text}> Available Orders </h2>
         <div className={styles.rightSection}>
           <div className={styles.control}>
-            <input className={styles.in} type="findloc" placeholder="Find Nearest Orders"/>
-            <Quan/>
+            <input className={styles.in} type="findloc" placeholder="Find Nearest Orders" />
+            <Quan />
           </div>
         </div>
       </div>

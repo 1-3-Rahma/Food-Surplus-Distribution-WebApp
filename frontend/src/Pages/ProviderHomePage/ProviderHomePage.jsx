@@ -55,14 +55,14 @@ const ProviderHomePage = () => {
 
   return (
     <div className="page-container">
-    <Header/>
-     <div className="content-wrapper justify-content-center align-items-center">
-      <Available availableOrders={availableOrders} />
-      <Ordered orderedItems={orderedItems} />
-      <Volunteer volunteers={volunteers} />
-     </div>
-    <Footer/>
-   </div>
+      <Header />
+      <div className="content-wrapper justify-content-center align-items-center">
+        <Available availableOrders={availableOrders} />
+        <Ordered orderedItems={orderedItems} />
+        <Volunteer volunteers={volunteers} />
+      </div>
+      <Footer />
+    </div>
 
   );
 };

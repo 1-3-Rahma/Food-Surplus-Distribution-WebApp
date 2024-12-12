@@ -5,7 +5,7 @@ import food from "../../Assets/food.png";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer'
 
-const ConstumerHomePage = () => {
+const ConsumerHomePage = () => {
   const [availableOrders, setAvailableOrders] = useState([
     { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
     { id: 2, photo: food, foodType: "Pizza", dishesCount: 4 },
@@ -30,16 +30,16 @@ const ConstumerHomePage = () => {
   return (
 
     <div className="page-container">
-    <Header/>
-     <div className="content-wrapper justify-content-center align-items-center">
-     <Available availableOrders={availableOrders} onAcceptOrder={onAcceptOrder} />
-     <Ordered orderedItems={orderedItems} onCancelOrder={onCancelOrder} />
-     </div>
-    <Footer/>
-   </div>
+      <Header />
+      <div className="content-wrapper justify-content-center align-items-center">
+        <Available availableOrders={availableOrders} onAcceptOrder={onAcceptOrder} />
+        <Ordered orderedItems={orderedItems} onCancelOrder={onCancelOrder} />
+      </div>
+      <Footer />
+    </div>
 
   );
 };
 
-export default ConstumerHomePage;
+export default ConsumerHomePage;
 

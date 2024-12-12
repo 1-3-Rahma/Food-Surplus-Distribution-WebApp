@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -13,10 +14,9 @@ html, body {
   background-color: #d6c7b2;
   font-family: Arial, sans-serif;
   color: #000;
-  padding: 15px 30px; 
-    margin-top: 30px;
+  padding: 15px 30px;
+  margin-top: 30px;
   bottom: 0;
-
   width: 100%;
 }
 
@@ -45,7 +45,7 @@ html, body {
 }
 
 .footer-section.right {
-  text-align:center;
+  text-align: center;
 }
 
 .footer-section h3 {
@@ -65,7 +65,7 @@ html, body {
   padding-top: 10px;
 }
 
-.footer-section i { 
+.footer-section i {
   justify-self: center;
   display: block;
 }
@@ -74,29 +74,37 @@ html, body {
 @media (max-width: 768px) {
   .footer_container {
     position: relative;
-    flex-direction: column; /* Stack sections vertically */
-    text-align: center; /* Center all text */
+    flex-direction: column;
+    /* Stack sections vertically */
+    text-align: center;
+    /* Center all text */
     padding: 15px;
 
   }
+
   .footer-section {
     margin: 10px 0;
-    width: 100%; /* Ensure sections take full width on small screens */
+    width: 100%;
+    /* Ensure sections take full width on small screens */
   }
 
   .footer-section.right {
-    text-align: center; 
-    order: 1; /* Ensure the right section comes below the left */
-    margin-top: 20px; /* Add space between the sections */
+    text-align: center;
+    order: 1;
+    /* Ensure the right section comes below the left */
+    margin-top: 20px;
+    /* Add space between the sections */
   }
 
   .footer-section.left {
-    order: 0; /* Keep the left section on top */
+    order: 0;
+    /* Keep the left section on top */
   }
 
   /* Center both sections horizontally */
   .footer-container {
-    justify-content: center; /* This ensures both left and right sections are centered */
+    justify-content: center;
+    /* This ensures both left and right sections are centered */
   }
 }
 
@@ -135,12 +143,15 @@ html, body {
 /* New class to group emails */
 .emailGroup {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  gap: 20px; /* Space between the email pairs */
+  justify-content: center;
+  /* Center the items horizontally */
+  gap: 20px;
+  /* Space between the email pairs */
   margin-bottom: 10px;
 }
 
 /* Ensure proper margin for p tags */
 .emailGroup p {
-  margin: 0; /* Remove any extra margin */
+  margin: 0;
+  /* Remove any extra margin */
 }

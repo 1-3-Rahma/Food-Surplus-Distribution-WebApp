@@ -1,43 +1,37 @@
 /* Container styling */
 .order-details-page {
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #EFD8C5;
-    border-radius: 10px;
-    width: 60%;
-    background-color:#f6f1ec;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Heading styling */
-  .order-heading {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #90694C;
-    margin-top: 35px;
-  }
-  
-  /* Section styling */
-  .order-section {
-    margin-bottom: 15px;
-    color: #90694C;
-    font-size: 20px;
-  }
-  
-  /* Button container */
-  .button-container {
-    /* display: flex; */
-    justify-content: space-between;
-    margin-top: 20px;
-    text-align: right;
-  }
-  
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #EFD8C5;
+  border-radius: 10px;
+  width: 60%;
+  background-color: #f6f1ec;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.order-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #90694C;
+  margin-top: 35px;
+}
+
+/* Section styling */
+.order-section {
+  margin-bottom: 15px;
+  color: #90694C;
+  font-size: 20px;
+}
+
+/* Button container */
+.button-container {
+  /* display: flex; */
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: right;
+}
 
 .accepted-btn {
-font-size: 30px;
-
-
+  font-size: 30px;
 }
-  
-
-  

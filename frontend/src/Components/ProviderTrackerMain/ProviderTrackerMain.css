@@ -1,31 +1,27 @@
-.hp{
+.hp {
     margin-top: 30px;
     color: #AF8260;
     font-weight: 400;
-    font-style: normal;   
+    font-style: normal;
     margin-bottom: 30px;
-    text-align:center;      
+    text-align: center;
 }
 
-.hpro{
+.hpro {
     margin-top: 20px;
     color: #8d5f3d;
     text-align: left;
 }
-.card-body{
+
+.card-body {
     text-align: left;
     width: 100%;
 }
 
-.tracker{
+.tracker {
     background-color: #FFF8F3;
 }
 
 .center-content {
     width: 60%;
-  }
-  
-
-
-
-
+}

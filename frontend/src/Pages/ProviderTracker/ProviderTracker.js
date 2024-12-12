@@ -1,17 +1,17 @@
-import ProviderTackerMain from "../../Components/ProviderTackerMain/ProviderTackerMain";
+import ProviderTrackerMain from "../../Components/ProviderTrackerMain/ProviderTrackerMain";
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 
-function ProviderTaker() {
+function ProviderTracker() {
   return (
     <div className="page-container">
-     <Header/>
+      <Header />
       <div className="content-wrapper d-flex justify-content-center align-items-center">
-        <ProviderTackerMain/>
+        <ProviderTrackerMain />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
 
-export default ProviderTaker;
+export default ProviderTracker;

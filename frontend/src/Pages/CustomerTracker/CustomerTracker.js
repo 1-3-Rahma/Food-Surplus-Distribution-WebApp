@@ -5,11 +5,11 @@ import Header from '../../Components/Header/Header'
 function CustomerTracker() {
   return (
     <div className="page-container">
-      <Header/>
+      <Header />
       <div className="content-wrapper d-flex justify-content-center align-items-center">
-        <CustomerTrackerMain/>
+        <CustomerTrackerMain />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

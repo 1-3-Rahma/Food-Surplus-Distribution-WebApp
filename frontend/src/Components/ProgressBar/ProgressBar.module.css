@@ -15,7 +15,8 @@
 }
 
 .complete .step {
-  @apply bg-semi-500; /* Changed to brown */
+  @apply bg-semi-500;
+  /* Changed to brown */
 }
 
 .complete p {
@@ -24,7 +25,8 @@
 
 .complete:not(:first-child):before,
 .active:not(:first-child):before {
-  @apply bg-brown-600; /* Changed to brown */
+  @apply bg-brown-600;
+  /* Changed to brown */
 }
 
 .btn {
