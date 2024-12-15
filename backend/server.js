@@ -1,17 +1,15 @@
+require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const connectDB = require('./config/db');
-
-// const authRoutes = require('./routes/authRoutes');
+const authRoutes = require("./routes/authRoutes");
 // const foodDonationRoutes = require('./routes/foodDonationRoutes');
 // const notificationRoutes = require('./routes/notificationRoutes');
 // const deleteExpiredDonations = require('./utils/JobScheduler');
 
 const orderRoutes = require('./routes/OrderRoutes');
 
-
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -20,12 +18,10 @@ app.use(express.json());
 connectDB();
 
 // Routes
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 // app.use('/api/food', foodDonationRoutes);
 // app.use('/api/notifications', notificationRoutes);
 app.use('/api/orders', orderRoutes);
-
-
 
 // Job Scheduler
 // deleteExpiredDonations();
