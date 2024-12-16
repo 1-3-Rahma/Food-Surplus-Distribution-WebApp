@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require("./routes/authRoutes");
-// const foodDonationRoutes = require('./routes/foodDonationRoutes');
-// const notificationRoutes = require('./routes/notificationRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 // const deleteExpiredDonations = require('./utils/JobScheduler');
+// const foodDonationRoutes = require('./routes/foodDonationRoutes');
 
 const orderRoutes = require('./routes/OrderRoutes');
 
@@ -20,7 +20,7 @@ connectDB();
 // Routes
 app.use('/api/auth', authRoutes);
 // app.use('/api/food', foodDonationRoutes);
-// app.use('/api/notifications', notificationRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api/orders', orderRoutes);
 
 // Job Scheduler
