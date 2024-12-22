@@ -5,8 +5,15 @@ import profile from '../../Assets/6833605.png'
 import classNames from 'classnames'
 import notification from '../../Assets/Notification.png'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate("/ProfilePage"); 
+  };
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
@@ -28,7 +35,7 @@ function Header() {
           </Link>
         </div>
 
-        <div className={styles.profile}>
+        <div className={styles.profile} onClick={handleProfileClick} style={{ cursor: "pointer" }}>
           <img src={profile} alt="User Profile" className={styles.profileImg} width={45} height={45} />
         </div>
       </div>
