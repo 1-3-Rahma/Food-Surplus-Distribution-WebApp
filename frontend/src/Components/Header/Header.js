@@ -17,7 +17,7 @@ function Header() {
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <img src={logo} alt="Meal-Aid" width={70} height={70} />
+        <img src={logo} alt="Meal-Aid"  width={70} height={70} />
       </div>
 
       <div className={styles.nav_links}>
