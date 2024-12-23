@@ -21,6 +21,11 @@ exports.register = async (req, res) => {
   try {
     const { firstName, lastName, email, password, userType, photo, city, address, phone } = req.body;
 
+    // Check for missing fields
+    if (!firstName || !lastName || !email || !password || !userType || !city || !address || !phone) {
+        return res.status(400).json({ message: 'All fields are required.' });
+      }
+  
     // Check first name validation (only letters and maximum 15 characters)
     if (!nameRegex.test(firstName) || firstName.length > 15) {
       return res.status(400).json({ message: 'First name must contain only letters and be up to 15 characters long.' });
@@ -42,9 +47,9 @@ exports.register = async (req, res) => {
     }
 
     // Check phone validation
-    if (!phoneRegex.test(phone)) {
-      return res.status(400).json({ message: 'Phone number must contain only numbers.' });
-    }
+    if (!phoneRegex.test(phone) || phone.length !== 11) {
+        return res.status(400).json({ message: 'Phone number must contain exactly 11 digits and only numbers.' });
+      }
 
     const userPhoto = photo || null;
 
@@ -70,37 +75,6 @@ exports.register = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-
-// Login function
-
-//without 3 chances
-// exports.login = async (req, res) => {
-//   try {
-//     const { email, password } = req.body;
-//     const user = await User.findOne({ email });
-
-//     if (!user) {
-//       return res.status(400).json({ message: 'User not found' });
-//     }
-
-//     // Check if the password matches
-//     const isMatch = await bcrypt.compare(password, user.password);
-//     if (!isMatch) {
-//       return res.status(400).json({ message: 'Invalid credentials' });
-//     }
-
-//     // If user exists and password matches, generate a JWT token
-//     const token = jwt.sign({ id: user._id, userType: user.userType }, process.env.JWT_SECRET, {
-//       expiresIn: '1h',
-//     });
-
-//     // Send the token and user details
-//     res.status(200).json({ token, user });
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// };
 
 
 exports.login = async (req, res) => {
@@ -145,8 +119,10 @@ exports.login = async (req, res) => {
     });
 
     // Send the token and user details
-    res.status(200).json({ token, user });
+    res.status(200).json({ message : "login successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
+

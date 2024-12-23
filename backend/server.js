@@ -1,30 +1,34 @@
-require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
+require('dotenv').config();
 const connectDB = require('./config/db');
-const authRoutes = require("./routes/authRoutes");
-const foodDonationRoutes = require('./routes/foodDonationRoutes');
-// const notificationRoutes = require('./routes/notificationRoutes');
-const deleteExpiredDonations = require('./utils/JobScheduler');
+const deleteExpiredDonations = require('./utils/JobSchedular');
 
+
+
+
+const authRoutes = require("./routes/authRoutes");
+const notificationRoutes = require('./routes/notificationRoutes');
+const foodDonationRoutes = require('./routes/foodDonationRoutes');
 const orderRoutes = require('./routes/OrderRoutes');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
 
-// Database
 connectDB();
 
-// Routes
+const app = express();
+app.use(bodyParser.json());
+
 app.use('/api/auth', authRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use('/api/food', foodDonationRoutes);
-// app.use('/api/notifications', notificationRoutes);
 app.use('/api/orders', orderRoutes);
+
 
 // Job Scheduler
 deleteExpiredDonations();
 
-// Server
+
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
