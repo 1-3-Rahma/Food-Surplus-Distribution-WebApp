@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import foodPackeg from "../../Assets/food-packaging-ideas.png";
     
 function HomeMain() {
+  const handleSave = () => {
+    alert('Data updated successfully');
+  };
   return (
     <div>
       <div className="container text-center">
@@ -44,7 +47,7 @@ function HomeMain() {
                 </div>
               </div>
 
-              <button type="submit" className="btn">Edit</button>
+              <button type="submit" className="btn" onClick={handleSave} >Save</button>
             </form>
           </div>
 

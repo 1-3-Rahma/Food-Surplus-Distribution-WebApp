@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import styles from './OrderCard.module.css';
+import { useNavigate } from "react-router-dom";
+
 
 const OrderCard = ({ orderedItems, onCancelOrder }) => {
   const sliderRef = useRef(null);
@@ -10,6 +12,10 @@ const OrderCard = ({ orderedItems, onCancelOrder }) => {
 
   const scrollRight = () => {
     sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+  const navigate = useNavigate();
+  const handleOrderDetails = () => {
+    navigate("/CustomerTracker"); 
   };
 
   return (
@@ -22,7 +28,7 @@ const OrderCard = ({ orderedItems, onCancelOrder }) => {
         <div className={styles.slider} ref={sliderRef}>
           {orderedItems.length > 0 ? (
             orderedItems.map((order) => (
-              <div key={order.id} className={styles.card_container}>
+              <div key={order.id} className={styles.card_container} onClick={handleOrderDetails}>
                 <img src={order.photo} alt={order.foodType} className={styles.food_image} />
                 <h3>Food: {order.foodType}</h3>
                 <p>Number of dishes: {order.foodCount}</p>

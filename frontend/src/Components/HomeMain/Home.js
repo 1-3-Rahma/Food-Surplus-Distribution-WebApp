@@ -33,40 +33,46 @@ function HomeMain() {
      <div className= "cardsContainer">
      <h3 className='hh'>Highlight</h3>
         <div class="card-container-h mr-4">
-            <div class="card align-items-center" style={{ width: '19rem' }}>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
                 <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
                 <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
-            <div class="card" style={{ width: '18rem' }}>
-                <img src="..." class="card-img-top" alt="..."/>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
-            <div class="card" style={{ width: '18rem' }}>
-                <img src="..." class="card-img-top" alt="..."/>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
-            <div class="card" style={{ width: '18rem' }}>
-            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
-            <div class="card" style={{ width: '18rem' }}>
-            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
-            <div class="card" style={{ width: '18rem' }}>
-            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
                 <div class="card-body">
-                <p class="card-text"></p>
+                <p class="card-text">food servery in a good packaging </p>
+                </div>
+            </div>
+            <div class="card align-items-center" style={{ width: '18rem' }}>
+                <img src= {foodpackaging} alt = "food packaging" class="card-img-top imgCard" />
+                <div class="card-body">
+                <p class="card-text">food servery in a good packaging </p>
                 </div>
             </div>
         </div>

@@ -27,7 +27,6 @@ const Ordered = ({ orderedItems }) => {
             <div
               key={order.id}
               className="ordered-card"
-              onClick={() => navigate("/add-order-page")} // Navigate to AddOrderPage
             >
               <img
                 src={order.photo}

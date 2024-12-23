@@ -21,12 +21,12 @@ const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOr
     <div className={styles.available_container}>
       <div className={styles.section}>
         <h2 className={styles.text}> Available Orders </h2>
-        <div className={styles.rightSection}>
+        {/* <div className={styles.rightSection}>
           <div className={styles.control}>
             <input className={styles.in} type="findloc" placeholder="Find Nearest Orders" />
             <Quan />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={styles.slider_wrapper}>
         <button className={styles.pad1} onClick={scrollLeft}>

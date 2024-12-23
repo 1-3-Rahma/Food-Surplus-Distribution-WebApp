@@ -10,6 +10,13 @@ const ConsumerHomePage = () => {
     { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
     { id: 2, photo: food, foodType: "Pizza", dishesCount: 4 },
     { id: 3, photo: food, foodType: "Soup", dishesCount: 3 },
+    { id: 4, photo: food, foodType: "noodles", dishesCount: 3 },
+    { id: 5, photo: food, foodType: "ptats", dishesCount: 2 },
+    { id: 6, photo: food, foodType: "zlabya", dishesCount: 4 },
+    { id: 7, photo: food, foodType: "mahshy", dishesCount: 9 },
+    { id: 8, photo: food, foodType: "mlo5ya", dishesCount: 2 },
+    { id: 9, photo: food, foodType: "Soup", dishesCount: 3 },
+
   ]);
 
   const [orderedItems, setOrderedItems] = useState([]); // Initially empty

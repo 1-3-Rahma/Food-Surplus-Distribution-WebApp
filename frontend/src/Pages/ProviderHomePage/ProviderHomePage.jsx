@@ -14,6 +14,9 @@ const ProviderHomePage = () => {
     { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
     { id: 2, photo: food, foodType: "Pizza", dishesCount: 4 },
     { id: 3, photo: food, foodType: "Soup", dishesCount: 3 },
+    { id: 4, photo: food, foodType: "Noodles", dishesCount: 2 },
+    { id: 5, photo: food, foodType: "Pizza", dishesCount: 4 },
+    { id: 6, photo: food, foodType: "Soup", dishesCount: 3 },
   ];
 
   const orderedItems = [
@@ -42,6 +45,38 @@ const ProviderHomePage = () => {
       foodPhoto: food,
       food: "Pizza",
       foodCount: 4,
+    },
+    {
+      id: 3,
+      photo: photo,
+      name: "Hossam Mohamed",
+      foodPhoto: food,
+      food: "Soup",
+      foodCount: 5,
+    },
+    {
+      id: 3,
+      photo: photo,
+      name: "Malek Adel",
+      foodPhoto: food,
+      food: "Soup",
+      foodCount: 5,
+    },
+    {
+      id: 3,
+      photo: photo,
+      name: "Salem Ahmed",
+      foodPhoto: food,
+      food: "Soup",
+      foodCount: 5,
+    },
+    {
+      id: 3,
+      photo: photo,
+      name: "Slem Islam",
+      foodPhoto: food,
+      food: "Soup",
+      foodCount: 5,
     },
     {
       id: 3,

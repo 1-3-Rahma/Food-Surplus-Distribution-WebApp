@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import './AcceptedOrders.css'; // Import the CSS file for styling
 import gif from '../../Assets/Delivery man brown.gif'
+import { useNavigate } from "react-router-dom";
+
 
 const AcceptedOrders = ({ acceptedOrders, onCancelOrder }) => {
     const sliderRef = useRef(null); // Reference for the slider container
@@ -14,6 +16,10 @@ const AcceptedOrders = ({ acceptedOrders, onCancelOrder }) => {
   const scrollRight = () => {
     sliderRef.current.scrollBy({ left: 300, behavior: 'smooth' });
   };
+  const navigate = useNavigate();
+  const handleVolunteerClick = () => {
+    navigate("/VolunteerOrderDetails"); 
+  };
 
   return (
     <div className="accepted-orders-container">
@@ -25,7 +31,7 @@ const AcceptedOrders = ({ acceptedOrders, onCancelOrder }) => {
         <div className="slider" ref={sliderRef}>
           {acceptedOrders.length > 0 ? (
             acceptedOrders.map((order) => (
-              <div key={order.id} className="order-card">
+              <div key={order.id} className="order-card" onClick={handleVolunteerClick} >
                 <h3>{order.name}</h3>
                 <div className="details">
                   <p>{order.details}</p>

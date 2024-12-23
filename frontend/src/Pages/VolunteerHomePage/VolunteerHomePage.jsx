@@ -8,12 +8,12 @@ import Header from '../../Components/Header/Header'
 
 const VolunteerHomePage = () => {
   const [orders, setOrders] = useState([
-    { id: 1, name: 'Order 1', details: 'Details about order 1.' },
-    { id: 2, name: 'Order 2', details: 'Details about order 2.' },
-    { id: 3, name: 'Order 3', details: 'Details about order 3.' },
-    { id: 6, name: 'Order 4', details: 'Details about order 4.' },
-    { id: 7, name: 'Order 5', details: 'Details about order 5.' },
-    { id: 8, name: 'Order 6', details: 'Details about order 6.' },
+    { id: 1, name: 'Order 1', details: '2 meals of pasta and 3 salads.'},
+    { id: 2, name: 'Order 2', details: '2 meals of mahshy and 2 mol5y.' },
+    { id: 3, name: 'Order 3', details: '4 meals of ptats and 7 hwawshy.' },
+    { id: 6, name: 'Order 4', details: '3 meals of bshamel .' },
+    { id: 7, name: 'Order 5', details: '7 meals of zlabya and 3 basbosa.' },
+    { id: 8, name: 'Order 6', details: '5 meals of basbosa and 3 konafa.' },
   ]);
   const navigate = useNavigate();
   const handleNavigateToOrder = (id) => {

@@ -1,7 +1,6 @@
 // export default MapSection;
 import React from 'react';
 import styles from "./MapSection.module.css";
-import map from '../../Assets/map.jpg'; // Assuming you still need this import for some reason
 
 function MapSection() {
   return (
@@ -11,7 +10,7 @@ function MapSection() {
       <div className={styles.mapContainer}>
         <iframe
           width="700"
-          height="700"
+          height="500"
           frameBorder="0"
           scrolling="no"
           marginHeight="0"

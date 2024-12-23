@@ -1,8 +1,12 @@
 import styles from "./AddItem.module.css";
 import cam from '../../Assets/cam.jpg'
-import classNames from 'classnames'
+import { useNavigate } from "react-router-dom";
 
 function AddItems() {
+  const navigate = useNavigate();
+  const handleAddFood = () => {
+    navigate("/Provider"); 
+  };
   return (
     <div className={styles.container}>
       {/* Add Items Form Section */}
@@ -24,7 +28,7 @@ function AddItems() {
           <input type="ExD" placeholder="Expiration date" />
 
           {/* Save Button */}
-          <button type="submit" className={styles.saveButton}>
+          <button type="submit" className={styles.saveButton} onClick={handleAddFood}>
             Save
           </button>
         </form>
