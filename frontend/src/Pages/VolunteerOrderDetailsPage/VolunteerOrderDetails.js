@@ -4,7 +4,6 @@ import OrderDetailsTable from '../../Components/OrderDetailsTable/OrderDetails';
 import ProgressBar from '../../Components/ProgressBar/ProgressBar';
 import Footer from '../../Components/Footer/Footer'
 
-
 function VolunteerOrderDetails() {
     return (
         <div>

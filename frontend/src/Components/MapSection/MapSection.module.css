@@ -13,3 +13,22 @@
     padding: 30px;
     border-radius: 8px;
   }
+
+
+
+
+
+  .container {
+    padding-top: 6
+    0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height for vertical centering */
+  }
+  
+  .mapContainer {
+    width: 800px;
+    height: 800px;
+  }
+   
