@@ -1,5 +1,5 @@
 import ProviderTrackerMain from "../../Components/ProviderTrackerMain/ProviderTrackerMain";
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
 
 function ProviderTracker() {

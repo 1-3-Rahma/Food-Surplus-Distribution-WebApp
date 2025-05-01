@@ -1,6 +1,6 @@
 import Notifications from '../../Components/Notifications/Notifications';
 import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
+import Footer from '../../Components/Footer/Footer2';
 
 function NotificationsPage() {
   return (

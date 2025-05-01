@@ -1,6 +1,6 @@
 import Header from '../../Components/Header/Header'
 import AddItems from '../../Components/AddItem/AddItem'
-import Footer from '../../Components/Footer/Footer';
+import Footer from '../../Components/Footer/Footer2';
 
 function AddPage() {
     return (
@@ -9,7 +9,7 @@ function AddPage() {
             <div className="content-wrapper justify-content-center align-items-center">
                 <AddItems />
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
 }

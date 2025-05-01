@@ -1,5 +1,5 @@
 import CustomerTrackerMain from "../../Components/CustomerTrackerMain/CustomerTrackerMain";
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
 
 function CustomerTracker() {
@@ -9,7 +9,7 @@ function CustomerTracker() {
       <div className="content-wrapper d-flex justify-content-center align-items-center">
         <CustomerTrackerMain />
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

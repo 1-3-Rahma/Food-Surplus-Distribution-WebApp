@@ -3,7 +3,7 @@ import Ordered from "../../Components/Ordered/Ordered";
 import food from "../../Assets/food.png";
 import photo from "../../Assets/photo.png"
 import Volunteer from '../../Components/Volunteer/Volunteer'
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Available from "../../Components/Available/Available";
 import Header from '../../Components/Header/Header'
 

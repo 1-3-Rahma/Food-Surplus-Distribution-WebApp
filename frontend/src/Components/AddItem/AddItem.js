@@ -21,11 +21,11 @@ function AddItems() {
           </div>
 
           {/* Food Type */}
-          <input type="foodType" placeholder="Food type" />
+          <input type="text" placeholder="Food type" />
           {/* Number of Dishes */}
-          <input type="nomOfD" placeholder="Number of Dishes" />
+          <input type="number" placeholder="Number of Dishes" />
           {/* Expiration Date */}
-          <input type="ExD" placeholder="Expiration date" />
+          <input type="date" placeholder="Expiration date" />
 
           {/* Save Button */}
           <button type="submit" className={styles.saveButton} onClick={handleAddFood}>

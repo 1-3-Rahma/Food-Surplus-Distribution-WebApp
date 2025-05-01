@@ -52,7 +52,7 @@ function SignUp() {
         }
 
         if (!formData.phoneNumber || formData.phoneNumber.length < 6 || !/^\d+$/.test(formData.phoneNumber)) {
-            newErrors.phoneNumber = "Enter a valid phone number with at least 6 digits.";
+            newErrors.phoneNumber = "Enter a valid phone number.";
         }
 
         if (!formData.userType) {

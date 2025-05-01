@@ -3,7 +3,7 @@ import Available from "../../Components/AvailableOrder/AvailableOrder";
 import Ordered from "../../Components/OrderCard/OrderCard";
 import food from "../../Assets/food.png";
 import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 
 const ConsumerHomePage = () => {
   const [availableOrders, setAvailableOrders] = useState([
@@ -42,7 +42,7 @@ const ConsumerHomePage = () => {
         <Available availableOrders={availableOrders} onAcceptOrder={onAcceptOrder} />
         <Ordered orderedItems={orderedItems} onCancelOrder={onCancelOrder} />
       </div>
-      <Footer />
+      <Footer/>
     </div>
 
   );

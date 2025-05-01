@@ -1,5 +1,5 @@
 import ProfileMain from "../../Components/ProfileMain/ProfileMain";
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
 
 function Profile() {

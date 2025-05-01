@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ForEachOrderRequest.css"; // Import the CSS file
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
 
 const ForEachOrderRequestPage = () => {

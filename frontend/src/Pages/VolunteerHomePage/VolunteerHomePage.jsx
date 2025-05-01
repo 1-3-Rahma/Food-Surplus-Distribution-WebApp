@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import OrderWillBeDelivered from '../../Components/OrderWillBeDelivered/OrdersWillBeDelivered';
 import AcceptedOrders from '../../Components/AcceptedOrders/AcceptedOrders';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
 
 
