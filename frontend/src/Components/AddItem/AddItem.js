@@ -62,10 +62,11 @@ function AddItems() {
             <label htmlFor="food-photo">
               <img 
                 src={selectedImage || cam} 
-                alt="Food Upload" 
+                alt="Upload food photo" 
                 width={50} 
                 height={50} 
                 style={{ cursor: 'pointer' }} 
+                required
               />
             </label>
             <input

@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './AvailableOrder.module.css';
-import classNames from "classnames";
-import Quan from '../Quantity button/quantity';
+
+
 
 const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOrder }) => {
   const sliderRef = useRef(null);
@@ -21,12 +21,6 @@ const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOr
     <div className={styles.available_container}>
       <div className={styles.section}>
         <h2 className={styles.text}> Available Orders </h2>
-        {/* <div className={styles.rightSection}>
-          <div className={styles.control}>
-            <input className={styles.in} type="findloc" placeholder="Find Nearest Orders" />
-            <Quan />
-          </div>
-        </div> */}
       </div>
       <div className={styles.slider_wrapper}>
         <button className={styles.pad1} onClick={scrollLeft}>
@@ -53,7 +47,7 @@ const AvailableOrders = ({ order, availableOrders, onNavigateToOrder, onAcceptOr
             ))
           ) : (
             <div className="no-orders-message">
-              <p>No orders to deliver at the moment!</p>
+              <p>No orders at the moment!</p>
             </div>
           )}
         </div>

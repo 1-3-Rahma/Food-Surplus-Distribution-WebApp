@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import food from '../Assets/food.png';
 
 const initialState = {
-  availableOrders: [],
+  availableOrders: [
+    { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
+ 
+  ],
   yourOrders: [],
   selectedOrder: null,
 };

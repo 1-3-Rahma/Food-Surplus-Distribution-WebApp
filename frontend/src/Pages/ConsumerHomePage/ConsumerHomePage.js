@@ -1,25 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Available from "../../Components/AvailableOrder/AvailableOrder";
 import Ordered from "../../Components/OrderCard/OrderCard";
-import food from "../../Assets/food.png";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer2';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAvailableOrders } from '../../redux/order';
 
 const ConsumerHomePage = () => {
-  // Initial available orders data
-  const initialAvailableOrders = [
-    { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
-    { id: 2, photo: food, foodType: "Pizza", dishesCount: 4 },
-    { id: 3, photo: food, foodType: "Soup", dishesCount: 3 },
-    { id: 4, photo: food, foodType: "noodles", dishesCount: 3 },
-    { id: 5, photo: food, foodType: "ptats", dishesCount: 2 },
-    { id: 6, photo: food, foodType: "zlabya", dishesCount: 4 },
-    { id: 7, photo: food, foodType: "mahshy", dishesCount: 9 },
-    { id: 8, photo: food, foodType: "mlo5ya", dishesCount: 2 },
-    { id: 9, photo: food, foodType: "Soup", dishesCount: 3 },
-  ];
-
-  const [availableOrders, setAvailableOrders] = useState(initialAvailableOrders);
+  const dispatch = useDispatch();
+  // Get available orders from Redux store
+  const availableOrders = useSelector(state => state.orders.availableOrders);
   const [orderedItems, setOrderedItems] = useState(() => {
     // Load ordered items from localStorage on initial render
     const savedItems = localStorage.getItem('consumerOrderedItems');
@@ -35,7 +25,6 @@ const ConsumerHomePage = () => {
   // Function to reset the state
   const resetState = () => {
     setOrderedItems([]);
-    setAvailableOrders(initialAvailableOrders);
     localStorage.removeItem('consumerOrderedItems');
     setErrorMessage("");
   };
@@ -52,14 +41,19 @@ const ConsumerHomePage = () => {
       addedAt: Date.now()
     };
     setOrderedItems([...orderedItems, orderWithTimestamp]);
-    setAvailableOrders(availableOrders.filter(item => item.id !== order.id));
+    
+    // Remove the order from available orders in Redux store
+    const updatedAvailableOrders = availableOrders.filter(item => item.id !== order.id);
+    dispatch(setAvailableOrders(updatedAvailableOrders));
   };
 
   // Function to cancel an order and move it back to "Available Orders"
   const onCancelOrder = (orderId) => {
     const canceledOrder = orderedItems.find(item => item.id === orderId);
     const { addedAt, ...orderWithoutTimestamp } = canceledOrder;
-    setAvailableOrders([...availableOrders, orderWithoutTimestamp]);
+    
+    // Add the order back to available orders in Redux store
+    dispatch(setAvailableOrders([...availableOrders, orderWithoutTimestamp]));
     setOrderedItems(orderedItems.filter(item => item.id !== orderId));
     setErrorMessage("");
   };
