@@ -6,18 +6,11 @@ import Volunteer from '../../Components/Volunteer/Volunteer'
 import Footer from '../../Components/Footer/Footer2';
 import Available from "../../Components/Available/Available";
 import Header from '../../Components/Header/Header'
-
-
+import { useSelector } from 'react-redux';
 
 const ProviderHomePage = () => {
-  const availableOrders = [
-    { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
-    { id: 2, photo: food, foodType: "Pizza", dishesCount: 4 },
-    { id: 3, photo: food, foodType: "Soup", dishesCount: 3 },
-    { id: 4, photo: food, foodType: "Noodles", dishesCount: 2 },
-    { id: 5, photo: food, foodType: "Pizza", dishesCount: 4 },
-    { id: 6, photo: food, foodType: "Soup", dishesCount: 3 },
-  ];
+  // Get available orders from Redux store
+  const availableOrders = useSelector(state => state.orders.availableOrders);
 
   const orderedItems = [
     { id: 1, photo: food, foodType: "Sandwich", foodCount: 1 },
@@ -26,7 +19,6 @@ const ProviderHomePage = () => {
     { id: 4, photo: food, foodType: "Burger", foodCount: 7 },
     { id: 5, photo: food, foodType: "Pasta", foodCount: 4 },
     { id: 6, photo: food, foodType: "Burger", foodCount: 9 },
-
   ];
 
   const volunteers = [
@@ -98,7 +90,6 @@ const ProviderHomePage = () => {
       </div>
       <Footer />
     </div>
-
   );
 };
 

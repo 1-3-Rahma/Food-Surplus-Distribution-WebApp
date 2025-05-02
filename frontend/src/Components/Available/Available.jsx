@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Available.css";
 import Add from '../../Assets/Plus-trans.png'
 
+
 const Available = ({ availableOrders }) => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
@@ -24,15 +25,6 @@ const Available = ({ availableOrders }) => {
           &lt;
         </button>
         <div className="slider" ref={sliderRef}>
-          {/* Render available orders */}
-          {availableOrders.map((order) => (
-            <div key={order.id} className="available-card">
-              <img src={order.photo} alt={order.foodType} className="food-image" />
-              <h5>Food: {order.foodType}</h5>
-              <p>Number of dishes: {order.dishesCount}</p>
-            </div>
-          ))}
-
           {/* Add order card */}
           <div
             className="available-card add-card"
@@ -43,6 +35,15 @@ const Available = ({ availableOrders }) => {
             <img className="add-icon" src={Add} />
 
           </div>
+
+          {/* Render available orders */}
+          {availableOrders.map((order) => (
+            <div key={order.id} className="available-card">
+              <img src={order.photo} alt={order.foodType} className="food-image" />
+              <h5>Food: {order.foodType}</h5>
+              <p>Number of dishes: {order.dishesCount}</p>
+            </div>
+          ))}     
         </div>
         <button className="nav-btn right" onClick={scrollRight}>
           &gt;

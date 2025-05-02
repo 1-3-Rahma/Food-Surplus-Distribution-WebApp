@@ -51,8 +51,8 @@ function SignUp() {
             newErrors.confirmPassword = "Passwords do not match.";
         }
 
-        if (!formData.phoneNumber || formData.phoneNumber.length < 6 || !/^\d+$/.test(formData.phoneNumber)) {
-            newErrors.phoneNumber = "Enter a valid phone number.";
+        if (!formData.phoneNumber || !/^\d{6,15}$/.test(formData.phoneNumber)) {
+            newErrors.phoneNumber = "Phone number should be between 6 and 15 digits.";
         }
 
         if (!formData.userType) {
@@ -69,7 +69,16 @@ function SignUp() {
     };
 
     const handleFileChange = (e) => {
-        setFormData({ ...formData, photo: e.target.files[0] });
+        const file = e.target.files[0];
+        if (file) {
+            // Check if the file is an image
+            if (!file.type.startsWith('image/')) {
+                setErrors({ ...errors, photo: "Please upload an image file only." });
+                return;
+            }
+            setFormData({ ...formData, photo: file });
+            setErrors({ ...errors, photo: null });
+        }
     };
 
     const handleSignUp = (e) => {
@@ -189,8 +198,10 @@ function SignUp() {
                                 className="form-control"
                                 id="photo"
                                 onChange={handleFileChange}
+                                accept="image/*"
                                 required
                             />
+                            {errors.photo && <small className="text-danger">{errors.photo}</small>}
                         </div>
 
                         <button type="submit" className="w-100 my-2">
