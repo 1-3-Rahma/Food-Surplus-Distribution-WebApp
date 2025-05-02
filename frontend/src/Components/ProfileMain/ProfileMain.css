@@ -1,0 +1,124 @@
+.sp {
+    margin-top: 100px;
+  }
+  
+  label {
+    color: #AF8260;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 1.2rem; /* Reduced font size for better responsiveness */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #8d5f3d;
+    border-radius: 0;
+  }
+  
+  .container {
+    margin-top: 50px; /* Adjusted for better spacing */
+  }
+  
+  .card-container-v {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 450px; /* Let it adjust based on content */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: scroll;
+    gap: 20px;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  .card-text{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+
+  .size {
+    font-size: 20px; /* Adjusted font size */
+  }
+  
+  .card-container-v::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    background-color: #f6f1ec;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    scroll-snap-align: start; 
+  }
+
+  
+  .history {
+    color: #AF8260;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 0;
+    margin-top: 25px;
+    font-size: 1.7rem; /* Adjusted for better font size */
+  }
+  
+  .imgCard {
+    width: 50%;
+    height: 60%;
+    border-radius: 10px;
+    margin-top: 15px;
+    object-fit: contain;
+  }
+  
+  .btn {
+    color: white;
+    background-color: #8b5e34;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 20px;
+    position: relative;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%); /* Center the button */
+  }
+
+  .btn:hover{
+    background-color: #70492b;
+    color: white;
+  }
+  
+  /* Responsive Breakpoints */
+  @media (max-width: 768px) {
+    label {
+      font-size: 1rem;
+    }
+    .card-container-v {
+    width: 100%;
+    }
+    .history {
+      font-size: 1.4rem;
+    }
+ 
+    .card-container-v {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .sp {
+      margin-top: 20px; /* Reduced margin for smaller screens */
+    }
+  
+    .btn {
+      width: 100%; /* Make the button full width */
+    }
+  }
+  

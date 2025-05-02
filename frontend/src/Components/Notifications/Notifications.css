@@ -1,0 +1,30 @@
+.notification-card {
+    background-color: #f6f1ec;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    /* Prevent content from spilling */
+}
+
+.notification-card button {
+    background-color: #90694C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.notification-card button:hover {
+    background-color: #906a4cb4;
+    /* Darker shade on hover */
+}

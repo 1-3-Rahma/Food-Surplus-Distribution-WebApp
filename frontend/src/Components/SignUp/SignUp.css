@@ -1,0 +1,27 @@
+.logo {
+    min-width: 100px;
+    max-width: 150px;
+}
+ 
+.form-header {
+    margin-top: -30px;
+    color: #90694C;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #90694C;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #906a4cb4;
+}

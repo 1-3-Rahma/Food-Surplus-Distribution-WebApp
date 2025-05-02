@@ -1,0 +1,24 @@
+/* OrderWillBeDelivered.css */
+.order-container {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+  text-align: center;
+  color: #906a4c;
+  margin-top: 70px;
+}
+
+.accept-btn {
+  background-color: #90694C;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+  /* Add some space from the content */
+  width: 90px;
+}
+
+.accept-btn:hover {
+  background-color: #906a4cb4;
+}

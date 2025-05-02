@@ -1,0 +1,106 @@
+/* General Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    color: #8b5e34;
+    
+  }
+  
+
+  /* Main Section */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    
+  }
+  
+  .text{
+    font-size: 20px;
+    padding: 30px 20px 20px 25px;
+    font-weight: bold;
+    color: #AF8260;
+  }
+  .title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #AF8260;
+  }
+  
+ input {
+  border: none;
+  border-bottom: 1px solid #AF8260 ;
+  font-size: 20px;
+  text-align: center;
+  color: #AF8260;
+  padding: 20px;
+ }
+ input:focus{
+  outline: none;
+ }
+ input::placeholder{
+  color: #AF8260;
+ }
+  .form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .photoInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    border-bottom: none;
+  }
+  .photoInput img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+   
+  }
+  .custom{
+         width: 170px;
+         height: 170px;
+         border-radius: 50px;
+         border-bottom: none;
+         padding-bottom: 5px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .saveButton {
+    width: 25%;
+    margin-left: 150px;
+    padding: 7px;
+    font-size: 18px;
+    background-color: #8b5e34;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .saveButton:hover {
+    background-color: #70492b;
+  }
+  

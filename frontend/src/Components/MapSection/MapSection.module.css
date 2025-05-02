@@ -1,0 +1,37 @@
+.mapContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+  }
+  
+  .mapImage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    width: 800px;
+    background-color: #f8f1e9;
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+
+
+
+
+  .container {
+    padding-top: 6
+    0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height for vertical centering */
+  }
+  
+  .mapContainer {
+    width: 800px;
+    height: 800px;
+  }
+   

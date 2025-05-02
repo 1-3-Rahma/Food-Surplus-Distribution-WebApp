@@ -1,0 +1,108 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF8F3;
+  color: black;
+  height: 60px;
+  padding: 4px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 12px;
+}
+
+.meal {
+  color: #8e6748;
+  font-size: 16px;
+}
+
+.span:hover {
+  color: #724e32;
+}
+
+.nav_item,
+.logout {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.logout {
+  margin-left: 17px;
+}
+
+.logout span {
+  margin-left: 5px;
+  color: #AF8260;
+  margin-right: 8px;
+}
+
+.main {
+  margin-left: 5px;
+  color: #AF8260;
+  margin-right: 20px;
+  font-size: 15px;
+  margin-left: 50px;
+}
+
+.main a {
+  color: #AF8260;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+
+
+.nav_item,
+.logout {
+  margin-left: 20px;
+  display: inline-flex; /* Use inline-flex for better alignment with other elements */
+  justify-content: flex-start;
+  align-items: center; /* Vertically align items */
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1; /* Prevent extra spacing */
+  text-decoration: none !important;
+}
+
+.nav_item a {
+  text-decoration: none !important;
+}
+
+.nav_item a span,
+.logout a span {
+  margin-left: 8px; /* Add spacing between the icon and text */
+  text-decoration: none !important;
+}
+
+.icon {
+  margin: 0;
+  margin-left: 5px;
+  vertical-align: middle; /* Ensure the icon aligns with the text baseline */
+  display: inline-block; /* Ensure the icon behaves as an inline element */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .meal {
+    display: none;
+
+  }
+}
