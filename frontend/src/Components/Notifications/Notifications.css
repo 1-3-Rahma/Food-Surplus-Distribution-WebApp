@@ -9,7 +9,18 @@
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
-    /* Prevent content from spilling */
+    transition: all 0.3s ease;
+}
+
+.notification-card.unread {
+    background-color: #fff;
+    border-left: 4px solid #90694C;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notification-message {
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .notification-card button {
@@ -27,4 +38,14 @@
 .notification-card button:hover {
     background-color: #906a4cb4;
     /* Darker shade on hover */
+}
+
+.badge {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+.bg-b{
+    background-color: #90694C;
 }

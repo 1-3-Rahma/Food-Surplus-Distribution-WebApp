@@ -11,7 +11,6 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
   
   // Get current user and orders from Redux store
   const currentUser = useSelector(state => state.auth.user);
-  // Change from orderedItems to yourOrders to match the Redux state
   const yourOrders = useSelector(state => state.orders.yourOrders) || [];
   const [showCancelButtons, setShowCancelButtons] = useState({});
 
@@ -80,16 +79,22 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
     return new Date(dateString).toLocaleString();
   };
 
+  const handleReset = () => {
+    if (onReset) {
+      onReset();
+    }
+  };
+
   return (
     <div className={styles.container}>
-     <div style={{ position: 'relative' }}>
+      <div >
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <h2 className={styles.text}>Your Order</h2>
+          <h2 className={styles.text}>Your Orders</h2>
           <button 
-            onClick={onReset}
+            onClick={handleReset}
             style={{
               padding: '5px 10px',
-              backgroundColor: '#dc3545',
+              backgroundColor: '#90694C',
               color: 'white',
               border: 'none',
               borderRadius: '4px',
@@ -100,7 +105,9 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
             Reset Orders
           </button>
         </div>
-        <p style={{ marginTop: '-5px', fontSize: '0.9em', color: '#666' , marginLeft: '115px'}}>You have up to 1 minute to cancel your order before it's processed.</p>
+        <p style={{ marginTop: '-5px', fontSize: '0.9em', color: '#666', marginLeft: '115px' }}>
+          You have up to 1 minute to cancel your order before it's processed.
+        </p>
         {errorMessage && (
           <span style={{ 
             color: 'red', 
@@ -108,7 +115,7 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
             fontWeight: 'bold',
             padding: '5px 10px',
             borderRadius: '4px',
-            backgroundColor: '#ffebee',
+            backgroundColor: '#af826094',
             position: 'absolute',
             left: '50%',
             top: '50%',
@@ -119,14 +126,6 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
           </span>
         )}
       </div>
-      
-
-
-
-
-
-
-
 
       <div className={styles.slider_wrapper}>
         <button 
@@ -200,4 +199,5 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
     </div>
   );
 };
+
 export default OrderCard;

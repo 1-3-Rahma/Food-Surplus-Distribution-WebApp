@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Ordered from "../../Components/Ordered/Ordered";
 import food from "../../Assets/food.png";
 import photo from "../../Assets/photo.png"
@@ -6,12 +6,28 @@ import Volunteer from '../../Components/Volunteer/Volunteer'
 import Footer from '../../Components/Footer/Footer2';
 import Available from "../../Components/Available/Available";
 import Header from '../../Components/Header/Header'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAvailableOrders, setYourOrders } from '../../redux/order';
 
 const ProviderHomePage = () => {
+  const dispatch = useDispatch();
   // Get orders from Redux store
   const availableOrders = useSelector(state => state.orders.availableOrders);
-  const orderedItems = useSelector(state => state.orders.yourOrders); // Get ordered items from Redux
+  const orderedItems = useSelector(state => state.orders.yourOrders);
+
+  // Initialize Redux store with orders
+  useEffect(() => {
+    if (availableOrders.length > 0) {
+      dispatch(setAvailableOrders(availableOrders));
+    }
+  }, []);
+
+  // Initialize ordered items
+  useEffect(() => {
+    if (orderedItems.length > 0) {
+      dispatch(setYourOrders(orderedItems));
+    }
+  }, []);
 
   const volunteers = [
     {
@@ -39,7 +55,7 @@ const ProviderHomePage = () => {
       foodCount: 5,
     },
     {
-      id: 3,
+      id: 4,
       photo: photo,
       name: "Malek Adel",
       foodPhoto: food,
@@ -47,7 +63,7 @@ const ProviderHomePage = () => {
       foodCount: 5,
     },
     {
-      id: 3,
+      id: 5,
       photo: photo,
       name: "Salem Ahmed",
       foodPhoto: food,
@@ -55,7 +71,7 @@ const ProviderHomePage = () => {
       foodCount: 5,
     },
     {
-      id: 3,
+      id: 6,
       photo: photo,
       name: "Slem Islam",
       foodPhoto: food,
@@ -63,7 +79,7 @@ const ProviderHomePage = () => {
       foodCount: 5,
     },
     {
-      id: 3,
+      id: 7,
       photo: photo,
       name: "Ahmed Mohamed",
       foodPhoto: food,

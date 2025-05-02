@@ -22,7 +22,6 @@ const saveState = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('reduxState', serializedState);
   } catch (err) {
-    // Handle errors here
     console.error('Error saving state:', err);
   }
 };

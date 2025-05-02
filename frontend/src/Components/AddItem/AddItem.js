@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { addOrder } from '../../redux/order';
+import { addNotification } from '../../redux/notification';
 
 function AddItems() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [selectedImage, setSelectedImage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     foodType: '',
     dishesCount: '',
@@ -20,9 +22,12 @@ function AddItems() {
     
     // Check if image is selected
     if (!selectedImage) {
-      alert("Please add an image of the food item");
+      setErrorMessage('Please upload an image of the food item');
       return;
     }
+
+    // Clear any previous error message
+    setErrorMessage('');
 
     // Create new order object
     const newOrder = {
@@ -36,6 +41,14 @@ function AddItems() {
     // Dispatch action to add new order
     dispatch(addOrder(newOrder));
     
+    // Dispatch notification for consumers
+    dispatch(addNotification({
+      type: 'new_food',
+      message: `New ${formData.foodType} available! ${formData.dishesCount} dishes added.`,
+      foodType: formData.foodType,
+      dishesCount: formData.dishesCount
+    }));
+    
     // Navigate back to provider page
     navigate("/Provider");
   };
@@ -43,7 +56,11 @@ function AddItems() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result); // This will be the base64 string
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -61,6 +78,12 @@ function AddItems() {
       <main className={styles.main}>
         <h1 className={styles.title}>Add Items</h1>
         <h1 className={styles.text}>Food Photo</h1>
+
+        {errorMessage && (
+          <div className={styles.errorMessage}>
+            {errorMessage}
+          </div>
+        )}
 
         <form className={styles.form} onSubmit={handleAddFood}>
           {/* Food Photo */}

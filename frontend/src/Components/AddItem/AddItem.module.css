@@ -101,6 +101,14 @@
   }
   
   .saveButton:hover {
-    background-color: #70492b;
+    background-color: #8b5e34b6;
+  }
+  
+  .errorMessage {
+    color: #dc3545;
+  margin-bottom: 30px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
   }
   

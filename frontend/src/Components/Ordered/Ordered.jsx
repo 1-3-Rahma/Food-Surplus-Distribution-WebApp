@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Ordered.css";
 
+
 const Ordered = ({ orderedItems }) => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
@@ -17,6 +18,12 @@ const Ordered = ({ orderedItems }) => {
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString();
+  };
+
+  // Handle image error
+  const handleImageError = (e) => {
+    e.target.onerror = null; // Prevent infinite loop
+   
   };
 
   return (
@@ -37,6 +44,10 @@ const Ordered = ({ orderedItems }) => {
                   src={order.photo}
                   alt={order.foodType}
                   className="food-image"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                  }}
                 />
                 <h5>Food: {order.foodType}</h5>
                 <p>Number of dishes: {order.dishesCount}</p>

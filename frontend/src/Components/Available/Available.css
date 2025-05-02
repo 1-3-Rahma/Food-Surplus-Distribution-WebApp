@@ -13,7 +13,9 @@
   margin-left: 80px;
 }
 
-
+.no-orders-message{
+  margin-top: 130px;
+}
 .slider-wrapper {
   position: relative;
   display: flex;

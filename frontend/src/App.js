@@ -20,21 +20,12 @@ function App() {
     <div className="Meal-id">
     <Router>
       <Routes>
-<<<<<<< HEAD
         <Route path="/" element={<HomePage/>}/>
 
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/SignUp" element={<SignUpPage/>}/>
 
         <Route path="/Notifications" element={<NotificationsPage/>}/>
-=======
-        <Route path="/" element={<HomePage/>} />
-
-        <Route path="/Login" element={<LoginPage/>} />
-        <Route path="/SignUp" element={<SignUpPage/>} />
-
-        <Route path="/Notifications" element={<NotificationsPage/>} />
->>>>>>> ac5c17e37be98a860fb1e5bc6a0629e84100d8d5
        
         <Route path="/Provider" element = {<Provider/>}/>
         <Route path="/ProviderTracker" element = {<ProviderTracker/>}/>

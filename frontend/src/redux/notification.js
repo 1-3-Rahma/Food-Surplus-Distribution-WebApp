@@ -9,13 +9,24 @@ const notificationSlice = createSlice({
   initialState,
   reducers: {
     addNotification: (state, action) => {
-      state.notifications.push(action.payload);
+      state.notifications.unshift({
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
+        read: false,
+        ...action.payload
+      });
     },
-    removeNotification: (state, action) => {
-      state.notifications = state.notifications.filter(notification => notification.id !== action.payload);
+    markAsRead: (state, action) => {
+      const notification = state.notifications.find(n => n.id === action.payload);
+      if (notification) {
+        notification.read = true;
+      }
+    },
+    clearNotifications: (state) => {
+      state.notifications = [];
     },
   },
 });
 
-export const { addNotification, removeNotification } = notificationSlice.actions;
+export const { addNotification, markAsRead, clearNotifications } = notificationSlice.actions;
 export default notificationSlice.reducer;

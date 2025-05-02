@@ -1,12 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import food from '../Assets/food.png';
 
+// Helper function to check if orders are from the same day
+const isSameDay = (date1, date2) => {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+};
+
 const initialState = {
   availableOrders: [
     { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
   ],
   yourOrders: [],
   selectedOrder: null,
+  error: null
 };
 
 const orderSlice = createSlice({
@@ -27,6 +37,19 @@ const orderSlice = createSlice({
     },
     moveToOrdered: (state, action) => {
       const { orderId, consumerId, consumerName, consumerEmail, consumerAddress } = action.payload;
+      
+      // Check daily order limit
+      const today = new Date();
+      const todayOrders = state.yourOrders.filter(order => {
+        const orderDate = new Date(order.orderTime);
+        return isSameDay(orderDate, today);
+      });
+
+      if (todayOrders.length >= 3) {
+        state.error = "You can only have 3 orders at a day.";
+        return;
+      }
+
       // Find the order in available orders
       const orderIndex = state.availableOrders.findIndex(order => order.id === orderId);
       if (orderIndex >= 0) {
@@ -43,6 +66,10 @@ const orderSlice = createSlice({
           orderTime: new Date().toISOString(),
           status: 'Pending'
         });
+        // Clear error if orders are now less than 3
+        if (state.yourOrders.length < 3) {
+          state.error = null;
+        }
       }
     },
     cancelOrder: (state, action) => {
@@ -54,7 +81,22 @@ const orderSlice = createSlice({
         const order = state.yourOrders[orderIndex];
         const { consumerId, consumerName, consumerEmail, consumerAddress, orderTime, status, ...basicOrder } = order;
         state.yourOrders.splice(orderIndex, 1);
-        state.availableOrders.push(basicOrder);
+        // Preserve the original order data including photo
+        state.availableOrders.push({
+          ...basicOrder,
+          photo: order.photo
+        });
+        
+        // Clear error if orders are now less than 3
+        const today = new Date();
+        const todayOrders = state.yourOrders.filter(order => {
+          const orderDate = new Date(order.orderTime);
+          return isSameDay(orderDate, today);
+        });
+        
+        if (todayOrders.length < 3) {
+          state.error = null;
+        }
       }
     },
     updateOrderStatus: (state, action) => {
@@ -64,6 +106,9 @@ const orderSlice = createSlice({
         state.yourOrders[orderIndex].status = status;
       }
     },
+    clearError: (state) => {
+      state.error = null;
+    }
   },
 });
 
@@ -74,7 +119,8 @@ export const {
   addOrder, 
   moveToOrdered, 
   cancelOrder, 
-  updateOrderStatus 
+  updateOrderStatus,
+  clearError
 } = orderSlice.actions;
 
 export default orderSlice.reducer;

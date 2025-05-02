@@ -6,14 +6,17 @@ import classNames from 'classnames'
 import notification from '../../Assets/Notification.png'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from 'react-redux';
 
 function Header() {
   const navigate = useNavigate();
+  const notifications = useSelector(state => state.notifications.notifications);
+  const unreadCount = notifications.filter(n => !n.read).length;
 
   const handleProfileClick = () => {
     navigate("/ProfilePage"); 
   };
+
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
@@ -23,13 +26,24 @@ function Header() {
       <div className={styles.nav_links}>
         <div className={classNames(styles.nav_item, styles.logout)}>
           <Link to='/Notifications'>
-            <img src={notification} alt="Notifications" className={styles.icon} width={23} height={23} />
+            <div className={styles.notification_wrapper}>
+              <img 
+                src={notification} 
+                alt="Notifications" 
+                className={classNames(styles.icon, { [styles.has_notifications]: unreadCount > 0 })} 
+                width={23} 
+                height={23} 
+              />
+              {unreadCount > 0 && (
+                <span className={styles.notification_badge}>{unreadCount}</span>
+              )}
+            </div>
             <span>Notifications</span>
           </Link>
         </div>
 
         <div className={classNames(styles.nav_item, styles.logout)} >
-        <Link to='/Login'>
+          <Link to='/Login'>
             <img src={logout} alt="Logout" className={styles.icon} width={20} height={20} />
             <span>Logout</span>
           </Link>
