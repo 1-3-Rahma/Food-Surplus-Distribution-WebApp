@@ -34,6 +34,10 @@ const notificationSlice = createSlice({
         notification.read = true;
       }
     },
+    deleteNotificationByOrderId: (state, action) => {
+      const { orderId } = action.payload;
+      state.notifications = state.notifications.filter(n => n.orderId !== orderId);
+    },
     clearNotifications: (state, action) => {
       const userRole = action.payload?.role;
       const userEmail = action.payload?.email;
@@ -58,5 +62,5 @@ const notificationSlice = createSlice({
   },
 });
 
-export const { addNotification, markAsRead, clearNotifications } = notificationSlice.actions;
+export const { addNotification, markAsRead, clearNotifications, deleteNotificationByOrderId } = notificationSlice.actions;
 export default notificationSlice.reducer;

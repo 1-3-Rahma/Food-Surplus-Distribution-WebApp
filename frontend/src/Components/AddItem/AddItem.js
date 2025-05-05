@@ -47,7 +47,8 @@ function AddItems() {
       message: `New ${formData.foodType} available! ${formData.dishesCount} dishes added.`,
       foodType: formData.foodType,
       dishesCount: formData.dishesCount,
-      target: 'consumer' // Target consumers specifically
+      target: 'consumer', // Target consumers specifically
+      timestamp: new Date().toISOString()
     }));
     
     // Navigate back to provider page
@@ -57,9 +58,29 @@ function AddItems() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      // Check if the file is an image
+      if (!file.type.startsWith('image/')) {
+        setErrorMessage('Please upload an image file only (JPG, PNG, GIF)');
+        return;
+      }
+
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setErrorMessage('Image size should be less than 5MB');
+        return;
+      }
+
+      // Check file type specifically
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+      if (!allowedTypes.includes(file.type)) {
+        setErrorMessage('Only JPG, PNG, and GIF images are allowed');
+        return;
+      }
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result); // This will be the base64 string
+        setErrorMessage(''); // Clear any previous error messages
       };
       reader.readAsDataURL(file);
     }
@@ -86,7 +107,8 @@ function AddItems() {
           </div>
         )}
 
-        <form className={styles.form} onSubmit={handleAddFood}>
+        <form onSubmit={handleAddFood} className={styles.form}>
+
           {/* Food Photo */}
           <div className={styles.photoInput}>
             <label htmlFor="food-photo">
@@ -101,7 +123,7 @@ function AddItems() {
             <input
               id="food-photo"
               type="file"
-              accept="image/*"
+              accept="image/jpeg,image/png,image/gif*"
               onChange={handleImageChange}
               style={{ display: 'none' }}
             />

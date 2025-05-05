@@ -22,26 +22,28 @@ const VolunteerHomePage = () => {
     const parsedOrders = savedOrders ? JSON.parse(savedOrders) : [];
     
     // Transform consumer orders to volunteer format
-    const transformedOrders = parsedOrders.map((order, index) => ({
-      id: order.id || index + 1,
-      name: `Order ${index + 1}`,
-      details: `${order.dishesCount} dishes of ${order.foodType}`,
-      provider: {
-        name: order.providerName || 'Provider',
-        address: order.providerAddress || 'Provider Address'
-      },
-      customer: {
-        name: order.consumerName || 'Customer',
-        address: order.consumerAddress || 'Customer Address',
-        email: order.consumerEmail
-      },
-      status: order.status || 'Pending',
-      originalOrder: order // Keep original order data
-    }));
+    const transformedOrders = parsedOrders
+      .filter(order => order.status === 'Pending' && order.willAppearInProvider) // Only show orders that are pending and meant for provider
+      .map((order, index) => ({
+        id: order.id || index + 1,
+        name: `Order ${index + 1}`,
+        details: `${order.dishesCount} dishes of ${order.foodType}`,
+        provider: {
+          name: order.providerName || 'Provider',
+          address: order.providerAddress || 'Provider Address'
+        },
+        customer: {
+          name: order.consumerName || 'Customer',
+          address: order.consumerAddress || 'Customer Address',
+          email: order.consumerEmail
+        },
+        status: order.status || 'Pending',
+        originalOrder: order // Keep original order data
+      }));
     
     // Also check Redux store for orders
     const reduxTransformedOrders = reduxOrders
-      .filter(order => order.status === 'Pending')
+      .filter(order => order.status === 'Pending' && order.willAppearInProvider) // Only show orders that are pending and meant for provider
       .map((order, index) => ({
         id: order.id,
         name: `Order ${index + 1}`,

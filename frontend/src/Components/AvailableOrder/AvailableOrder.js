@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { moveToOrdered } from '../../redux/order';
 import { addNotification } from '../../redux/notification';
 
+// Define the cancellation window time in milliseconds (can be easily changed)
+const CANCELLATION_WINDOW = 60000; // 1 minute in milliseconds
+
 const AvailableOrders = ({ availableOrders }) => {
   const sliderRef = useRef(null);
   const navigate = useNavigate();
@@ -22,16 +25,24 @@ const AvailableOrders = ({ availableOrders }) => {
       consumerId: currentUser.id,
       consumerName: `${currentUser.firstName} ${currentUser.lastName}`,
       consumerEmail: currentUser.email,
-      consumerAddress: currentUser.address
+      consumerAddress: currentUser.address,
+      cancellationWindow: CANCELLATION_WINDOW // Pass the cancellation window time
     }));
     
-    // Add notification for volunteers about new order request
-    dispatch(addNotification({
-      type: 'order_request',
-      message: `New order request for ${order.foodType} (${order.dishesCount} dishes)`,
-      target: 'volunteer',
-      orderId: order.id
-    }));
+    // Set a timeout to send notification to volunteers after the cancellation window
+    setTimeout(() => {
+      dispatch(addNotification({
+        type: 'order_request',
+        message: `New order request for ${order.foodType} (${order.dishesCount} dishes) from ${currentUser.firstName} ${currentUser.lastName}`,
+        target: 'volunteer',
+        orderId: order.id,
+        consumerDetails: {
+          name: `${currentUser.firstName} ${currentUser.lastName}`,
+          email: currentUser.email,
+          address: currentUser.address
+        }
+      }));
+    }, CANCELLATION_WINDOW);
   };
 
   // Scroll functions

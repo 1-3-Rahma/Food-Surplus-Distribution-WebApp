@@ -72,5 +72,48 @@
     display: none;
 }
 
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fade-out-slow {
+  animation: fadeOutSlow 60s ease-out forwards;
+  position: relative;
+}
+
+@keyframes fadeOutSlow {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.ordered-card {
+  transition: all 0.3s ease;
+}
+
+.ordered-card.canceling {
+  border: 2px solid orange;
+}
+
   
 

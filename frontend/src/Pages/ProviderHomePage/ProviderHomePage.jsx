@@ -18,7 +18,17 @@ const ProviderHomePage = () => {
   // Initialize Redux store with orders
   useEffect(() => {
     if (availableOrders.length > 0) {
-      dispatch(setAvailableOrders(availableOrders));
+      // Filter out canceled orders from available orders
+      const activeOrders = availableOrders.filter(order => order.status !== 'Canceled');
+      const canceledOrders = availableOrders.filter(order => order.status === 'Canceled');
+      
+      // Set active orders to available orders
+      dispatch(setAvailableOrders(activeOrders));
+      
+      // Add canceled orders to ordered items
+      if (canceledOrders.length > 0) {
+        dispatch(setYourOrders([...orderedItems, ...canceledOrders]));
+      }
     }
   }, []);
 

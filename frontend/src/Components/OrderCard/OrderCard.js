@@ -2,7 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import styles from './OrderCard.module.css';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { moveToOrdered, cancelOrder } from '../../redux/order';
+import { moveToOrdered, cancelOrder, updateOrderCancelableStatus } from '../../redux/order';
+import { deleteNotificationByOrderId, addNotification } from '../../redux/notification';
+
+// Use the same cancellation window time as in AvailableOrder
+const CANCELLATION_WINDOW = 60000; // 1 minute in milliseconds
 
 const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
   const dispatch = useDispatch();
@@ -23,7 +27,9 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
       yourOrders.forEach(order => {
         if (order.orderTime) {
           const timeElapsed = now - new Date(order.orderTime).getTime();
-          newShowCancelButtons[order.id] = timeElapsed <= 60000; // 1 minute cancel window
+          // Use the cancellation window from the order or default to CANCELLATION_WINDOW
+          const windowTime = order.cancellationWindow || CANCELLATION_WINDOW;
+          newShowCancelButtons[order.id] = timeElapsed <= windowTime;
         }
       });
       
@@ -50,6 +56,9 @@ const OrderCard = ({ onCancelOrder, errorMessage, onReset }) => {
 
   const handleCancelOrder = (orderId) => {
     try {
+      // Delete any existing notifications for this order
+      dispatch(deleteNotificationByOrderId({ orderId }));
+      // Cancel the order
       dispatch(cancelOrder({ orderId }));
       if (onCancelOrder) {
         onCancelOrder(orderId);
