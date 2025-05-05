@@ -13,9 +13,7 @@ const isSameDay = (date1, date2) => {
 };
 
 const initialState = {
-  availableOrders: [
-    { id: 1, photo: food, foodType: "Salad Dish", dishesCount: 2 },
-  ],
+  availableOrders: [],
   yourOrders: [],
   selectedOrder: null,
   error: null
