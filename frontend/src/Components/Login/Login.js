@@ -49,10 +49,20 @@ function Login() {
         localStorage.setItem("currentUserEmail", user.email);
 
         // Redirect based on userType
-        if (user.userType === "Consumer") navigate('/Consumer');
-        else if (user.userType === "Provider") navigate('/Provider');
-        else if (user.userType === "Volunteer") navigate('/Volunteer');
-        else navigate('/');
+        // Redirect based on userType
+        if (user.userType === "Consumer") {
+            localStorage.setItem("role", "consumer");
+            navigate('/Consumer');
+        } else if (user.userType === "Provider") {
+            localStorage.setItem("role", "provider");
+            navigate('/Provider');
+        } else if (user.userType === "Volunteer") {
+            localStorage.setItem("role", "volunteer");
+            navigate('/Volunteer');
+        } else {
+            navigate('/');
+        }
+  
     };
 
     return (

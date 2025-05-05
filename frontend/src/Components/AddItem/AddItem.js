@@ -46,7 +46,8 @@ function AddItems() {
       type: 'new_food',
       message: `New ${formData.foodType} available! ${formData.dishesCount} dishes added.`,
       foodType: formData.foodType,
-      dishesCount: formData.dishesCount
+      dishesCount: formData.dishesCount,
+      target: 'consumer' // Target consumers specifically
     }));
     
     // Navigate back to provider page

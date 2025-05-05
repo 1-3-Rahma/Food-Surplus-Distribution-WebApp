@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from './AvailableOrder.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { moveToOrdered } from '../../redux/order';
+import { addNotification } from '../../redux/notification';
 
 const AvailableOrders = ({ availableOrders }) => {
   const sliderRef = useRef(null);
@@ -22,6 +23,14 @@ const AvailableOrders = ({ availableOrders }) => {
       consumerName: `${currentUser.firstName} ${currentUser.lastName}`,
       consumerEmail: currentUser.email,
       consumerAddress: currentUser.address
+    }));
+    
+    // Add notification for volunteers about new order request
+    dispatch(addNotification({
+      type: 'order_request',
+      message: `New order request for ${order.foodType} (${order.dishesCount} dishes)`,
+      target: 'volunteer',
+      orderId: order.id
     }));
   };
 

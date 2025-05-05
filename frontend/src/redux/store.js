@@ -26,6 +26,13 @@ const saveState = (state) => {
   }
 };
 
+// Add debug log to check if notifications reducer is properly registered
+console.log("Configuring Redux store with reducers:", {
+  auth: "authReducer",
+  orders: "orderReducer",
+  notifications: "notificationReducer"
+});
+
 const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -34,6 +41,9 @@ const store = configureStore({
   },
   preloadedState: loadState(),
 });
+
+// Debug log to check initial state
+console.log("Initial Redux state:", store.getState());
 
 // Subscribe to store changes and save to localStorage
 store.subscribe(() => {

@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addNotification } from '../../redux/notification';
 import "./ForEachOrderRequest.css"; // Import the CSS file
 import Footer from '../../Components/Footer/Footer2';
 import Header from '../../Components/Header/Header'
@@ -7,6 +9,7 @@ import Header from '../../Components/Header/Header'
 const ForEachOrderRequestPage = () => {
   const { id } = useParams(); // Get the order ID from the URL
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // Example data (replace with actual data fetched from backend or context/state)
   const orders = [
@@ -62,6 +65,15 @@ const ForEachOrderRequestPage = () => {
 
   // Function to handle order acceptance
   const handleAccept = () => {
+    // Add notification for customer about volunteer accepting order
+    dispatch(addNotification({
+      type: 'volunteer_update',
+      message: `A volunteer has accepted your order and will deliver it soon.`,
+      target: 'consumer',
+      recipient: order.details.customer.email, // If you have customer email
+      orderId: id
+    }));
+    
     alert(`You have accepted Order ID: ${id}`);
     navigate("/Volunteer"); // Redirect to VolunteerHomePage
   };

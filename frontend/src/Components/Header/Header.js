@@ -11,7 +11,16 @@ import { useSelector } from 'react-redux';
 function Header() {
   const navigate = useNavigate();
   const notifications = useSelector(state => state.notifications.notifications);
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const auth = useSelector(state => state.auth);
+  const userRole = auth.role ? auth.role.toLowerCase() : localStorage.getItem("role");
+  
+  const filteredNotifications = notifications.filter(n => 
+    n.target === userRole || 
+    (n.target === 'all') || 
+    (n.recipient && n.recipient === auth.user?.email)
+  );
+  
+  const unreadCount = filteredNotifications.filter(n => !n.read).length;
 
   const handleProfileClick = () => {
     navigate("/ProfilePage"); 
