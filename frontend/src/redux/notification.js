@@ -34,8 +34,26 @@ const notificationSlice = createSlice({
         notification.read = true;
       }
     },
-    clearNotifications: (state) => {
-      state.notifications = [];
+    clearNotifications: (state, action) => {
+      const userRole = action.payload?.role;
+      const userEmail = action.payload?.email;
+      
+      if (userRole || userEmail) {
+        // Only remove notifications that match ALL of these criteria:
+        // 1. Targeted at this user's role OR targeted at 'all' OR specifically for this user's email
+        state.notifications = state.notifications.filter(n => {
+          const isForThisUser = 
+            (n.target === userRole) || 
+            (n.target === 'all') || 
+            (n.recipient === userEmail);
+          
+          // Keep notifications that are NOT for this user
+          return !isForThisUser;
+        });
+      } else {
+        // Clear all notifications if no role/email specified
+        state.notifications = [];
+      }
     },
   },
 });

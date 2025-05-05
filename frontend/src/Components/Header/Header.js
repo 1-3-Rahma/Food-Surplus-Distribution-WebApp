@@ -26,9 +26,24 @@ function Header() {
     navigate("/ProfilePage"); 
   };
 
+  // Add function to handle logo click
+  const handleLogoClick = () => {
+    // Navigate based on user role
+    if (userRole === 'consumer') {
+      navigate('/Consumer');
+    } else if (userRole === 'provider') {
+      navigate('/Provider');
+    } else if (userRole === 'volunteer') {
+      navigate('/Volunteer');
+    } else {
+      // Default to homepage if role is not recognized
+      navigate('/');
+    }
+  };
+
   return (
     <header className={styles.navbar}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
         <img src={logo} alt="Meal-Aid"  width={70} height={70} />
       </div>
 

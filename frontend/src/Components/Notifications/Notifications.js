@@ -1,7 +1,7 @@
 import './Notifications.css';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { markAsRead, addNotification } from '../../redux/notification';
+import { markAsRead, addNotification, clearNotifications } from '../../redux/notification';
 import { useEffect, useState } from 'react';
 
 
@@ -97,13 +97,37 @@ function Notifications() {
     }
   }, [dispatch, userRole]);
 
+  // Add handler for clearing notifications for current user
+  const handleClearAllNotifications = () => {
+    dispatch(clearNotifications({
+      role: userRole,
+      email: auth.user?.email
+    }));
+  };
+
   return (
     <div className="container">
      
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          <div className="p-3 mb-5">
-            <h4 className="m-0">Notifications {unreadCount > 0 && <span className="badge bg-b">{unreadCount}</span>}</h4>
+          <div className="p-3 mb-5" style={{ maxWidth: '95%', margin: '0 auto' }}>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h4 className="m-0">Notifications {unreadCount > 0 && <span className="badge bg-b">{unreadCount}</span>}</h4>
+              <button 
+                onClick={handleClearAllNotifications}
+                className="btn btn-sm"
+                style={{
+                  backgroundColor: '#90694C',
+                  color: 'white',
+                  borderRadius: '4px',
+                  padding: '5px 10px',
+                  fontSize: '14px',
+                  marginRight: '15px' // Increased margin
+                }}
+              >
+                Clear All
+              </button>
+            </div>
             <div className="card-body">
               <div style={{ height: '400px', overflowY: 'auto', overflowX: 'hidden' }}>
                 {filteredNotifications.length === 0 ? (

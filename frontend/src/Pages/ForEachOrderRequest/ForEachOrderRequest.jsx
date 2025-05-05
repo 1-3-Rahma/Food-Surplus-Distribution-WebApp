@@ -73,6 +73,13 @@ const ForEachOrderRequestPage = () => {
       recipient: order.details.customer.email, // If you have customer email
       orderId: id
     }));
+    dispatch(addNotification({
+      type: 'volunteer_update',
+      message: `A volunteer has accepted an order and will pick up it soon.`,
+      target: 'provider',
+      recipient: order.details.customer.email, // If you have customer email
+      orderId: id
+    }));
     
     alert(`You have accepted Order ID: ${id}`);
     navigate("/Volunteer"); // Redirect to VolunteerHomePage
