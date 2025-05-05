@@ -8,7 +8,9 @@
   padding: 4px;
   margin-bottom: 30px;
 }
-
+.profileImg{
+  border-radius: 45%;
+}
 .logo {
   display: flex;
   align-items: center;

@@ -7,12 +7,42 @@ import notification from '../../Assets/Notification.png'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 function Header() {
   const navigate = useNavigate();
   const notifications = useSelector(state => state.notifications.notifications);
   const auth = useSelector(state => state.auth);
   const userRole = auth.role ? auth.role.toLowerCase() : localStorage.getItem("role");
+  const [profileImage, setProfileImage] = useState(profile);
+  
+  // Get user profile image
+  useEffect(() => {
+    const currentUserEmail = localStorage.getItem("currentUserEmail");
+    console.log("Current user email:", currentUserEmail);
+    
+    if (currentUserEmail) {
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      console.log("Found users in localStorage:", users.length);
+      
+      const currentUser = users.find(user => user.email === currentUserEmail);
+      console.log("Current user found:", currentUser ? "Yes" : "No");
+      
+      if (currentUser) {
+        console.log("User has photo:", currentUser.photo ? "Yes" : "No");
+        if (currentUser.photo) {
+          console.log("Setting profile image from user data");
+          setProfileImage(currentUser.photo);
+        } else {
+          console.log("User has no photo, using default");
+        }
+      } else {
+        console.log("Current user not found in users array");
+      }
+    } else {
+      console.log("No current user email in localStorage");
+    }
+  }, []);
   
   const filteredNotifications = notifications.filter(n => 
     n.target === userRole || 
@@ -74,7 +104,7 @@ function Header() {
         </div>
 
         <div className={styles.profile} onClick={handleProfileClick} style={{ cursor: "pointer" }}>
-          <img src={profile} alt="User Profile" className={styles.profileImg} width={45} height={45} />
+          <img src={profileImage} alt="User Profile" className={styles.profileImg} width={45} height={45} />
         </div>
       </div>
     </header>

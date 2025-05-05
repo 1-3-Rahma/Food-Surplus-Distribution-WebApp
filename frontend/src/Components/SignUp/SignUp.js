@@ -76,7 +76,14 @@ function SignUp() {
                 setErrors({ ...errors, photo: "Please upload an image file only." });
                 return;
             }
-            setFormData({ ...formData, photo: file });
+            
+            // Convert image to base64 string for storage
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData({ ...formData, photo: reader.result });
+            };
+            reader.readAsDataURL(file);
+            
             setErrors({ ...errors, photo: null });
         }
     };
@@ -87,6 +94,10 @@ function SignUp() {
         if (validateForm()) {
             // Save user data to localStorage for mockup purposes
             const users = JSON.parse(localStorage.getItem("users")) || [];
+            
+            // Log to verify photo is included
+            console.log("Saving user with photo:", formData.photo ? "Photo exists" : "No photo");
+            
             users.push(formData);
             localStorage.setItem("users", JSON.stringify(users));
 
